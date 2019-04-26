@@ -1,0 +1,151 @@
+﻿
+
+
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="gsOrgMaster.master.cs" Inherits="WEB.gsOrgMaster" %>
+
+<%@ Register assembly="DevExpress.Web.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" 
+
+namespace="DevExpress.Web.ASPxMenu" tagprefix="dx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Sistema de Organograma </title>
+    <link rel="Stylesheet"    type="text/css" href="gsOrganograma.css" />
+
+
+    <script type="text/javascript" src="Scripts/jquery-1.4.1.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript" src="Scripts/cufon-yui.js"></script>
+ 
+    <script type="text/javascript" src="Scripts/Myriad_Pro_400.font.js"></script>
+    <script type="text/javascript" src="Scripts/Myriad_Pro_700.font.js"></script>
+   <script type="text/javascript" src="Scripts/cufon-replace.js"></script>
+
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+   
+   
+
+    </asp:ContentPlaceHolder>
+
+
+</head>
+<body>
+
+
+    <form id="form1" runat="server">
+
+
+
+<div>
+
+
+
+
+
+
+   <!-- tabela menu superior  LOGO, TEXTO, MENU DIREITA --> 
+   <table class="TabelaMenuSuperior">
+ 
+   <tr>
+   <!-- Logo -->
+   <td class="TabelaMenuSuperiorLogo"> <img src="Imagens/logo.jpg" alt="Globosat" /> </td> 
+
+
+   <td style="text-align:center" > <p class="TextoAzulDestaque">Sistema Organograma</p></td>
+
+  
+  
+   <!--Menu sup direita -->
+   <td  class="TabelaMenuSuperiorDireita">
+      
+      
+       <table> 
+       <tr>
+       <td>  <asp:Image ID="imgEmpresa" runat="server" Visible="false" AlternateText="Empresa Selecionada"   /></td>
+       <td><a href="Default.aspx" title="Home" ><img alt="Home" src="Imagens/home.png" style="width:40px; border:none; cursor:hand" /></a></td>
+       <td><a href="wfmSair.aspx" title="Sair" ><img alt="Sair" src="Imagens/exit.png" style="width:40px; border:none; cursor:hand" /></a></td>
+       </tr>
+       </table>
+      
+      </td>
+   <!-- fim menu sup direita -->
+   </tr>
+
+
+   </table>
+
+
+
+
+
+   <!-- inicio do .Net Menu principal -->
+   
+   <table class="TabelaMenuContainer">
+   
+   <tr>
+   <td>
+       <dx:ASPxMenu ID="mnuPrincipal" runat="server" 
+           BorderBetweenItemAndSubMenu="HideRootOnly" 
+           CssFilePath="~/App_Themes/Office2003Silver/{0}/styles.css" 
+           CssPostfix="Office2003Silver" ShowPopOutImages="True" 
+           SpriteCssFilePath="~/App_Themes/Office2003Silver/{0}/sprite.css" 
+           Width="600px">
+           <Items>
+               <dx:MenuItem Text="Seções" NavigateUrl="wfmSecoes.aspx">
+               </dx:MenuItem>
+               <dx:MenuItem Text="Diretoria" NavigateUrl="wfmDiretoria.aspx">
+               </dx:MenuItem>
+               <dx:MenuItem Text="Subseção" NavigateUrl="wfmSubsecoes.aspx">
+               </dx:MenuItem>
+               <dx:MenuItem Text="Relatórios" NavigateUrl="wfmRelatorios.aspx">
+               </dx:MenuItem>
+               <dx:MenuItem Text="Validações"  NavigateUrl="wfmValidacoes.aspx">
+               </dx:MenuItem>
+               <dx:MenuItem Text="Geração de Arquivos" NavigateUrl="wfmExportacoes.aspx">
+               </dx:MenuItem>
+           </Items>
+           <LoadingPanelImage Url="~/App_Themes/Office2003Silver/Web/Loading.gif">
+           </LoadingPanelImage>
+           <ItemSubMenuOffset FirstItemX="2" LastItemX="2" X="2" />
+           <ItemStyle HorizontalAlign="Left" />
+           <SubMenuStyle GutterWidth="17px" />
+       </dx:ASPxMenu>
+       </td>
+   </tr>
+   </table> 
+
+
+
+
+
+
+
+
+</div>
+
+
+
+   <div class="TabelaMasterCondeudo">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+  
+
+        
+
+
+
+    </div>
+    </form>
+</body>
+</html>
+
+
+
+
+

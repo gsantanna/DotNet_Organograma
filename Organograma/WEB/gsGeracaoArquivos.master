@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/gsOrgMaster.Master" AutoEventWireup="true" CodeBehind="gsGeracaoArquivos.master.cs" Inherits="WEB.gsGeracaoArquivos" %>
+<%@ Register assembly="DevExpress.Web.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxNavBar" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxMenu" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.ASPxEditors.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  
+  <div class="Subtitulo">Geração de Arquivos</div>
+
+
+        <table  style="width:100%">
+            <tr>
+                <td style="width:200px; vertical-align:top;">
+                    <dx:ASPxMenu ID="ASPxMenu1" runat="server" Height="188px" 
+                        Orientation="Vertical">
+                        <Items>
+                            <dx:MenuItem NavigateUrl="wfmExportacoes.aspx" Text="Linhas Avulsas">
+                            </dx:MenuItem>
+                            <dx:MenuItem NavigateUrl="wfmExportGestaoDesempenho.aspx" 
+                                Text="Gestão de Desempenho">
+                            </dx:MenuItem>
+                            <dx:MenuItem NavigateUrl="wfmExportTreinamento.aspx" 
+                                Text="Sistema de Treinamento">
+                            </dx:MenuItem>
+                        </Items>
+                    </dx:ASPxMenu>
+                </td>
+                <td style="vertical-align:top">
+                    <asp:ContentPlaceHolder ID="cpGerador"  runat="server">
+                    </asp:ContentPlaceHolder>
+                    
+                    
+                    </td>
+            </tr>
+        </table>
+
+
+        <br />
+    &nbsp;&nbsp;</p>
+</asp:Content>

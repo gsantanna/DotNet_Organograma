@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ModelStoreContainer">
+          </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_CARGO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_EMPRESA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_FUNCIONARIO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_FUNCIONARIO_ALOCADO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DSC_DOMINIO' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DSC_SENHA' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'COD_TIPO_USUARIO' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'COD_CPF' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DSC_APELIDO' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DAT_INICIO_FERIAS' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DAT_FIM_FERIAS' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'COD_SUPERVISOR_FUNCIONAL' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DSC_GRADE_SALARIAL' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DAT_INICIO_CARGO' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'COD_IDIOMA_PREF' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'COD_PAIS' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'COD_UF' in the table 'SYSTEM.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_FUNCIONARIO_EXPORT_TR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_LISTA_DIRETORIAS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_LISTA_SECOES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_LISTA_SECOES_SIMPLES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_LISTA_SUBSECAO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_LOCAL_TRABALHO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_SECAO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SYSTEM.ORG_TIPO_FUNCIONARIO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="gSatOrganogrmaRev2" annotation:LazyLoadingEnabled="true">
+          </EntityContainer>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="gSatOrganogrmaRev2">
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="gSatOrganograma" ZoomLevel="40">
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

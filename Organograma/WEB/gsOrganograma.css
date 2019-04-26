@@ -1,0 +1,188 @@
+﻿
+
+
+
+/*
+GERAL
+*/
+
+.Body
+{
+    font-family: Calibri, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    text-decoration: none;
+    background-color: #F7F7F7;
+    border-width: 0px;
+    border-style: none;
+}
+
+
+
+/*
+Separadores
+*/
+
+.s10
+{
+    width:10px;
+}
+.s20
+{
+    width:20px;
+}
+
+.s40
+{
+    width:40px;
+}
+
+.s60
+{
+    width:60px;
+}
+
+
+.TextoAzulDestaque
+{
+    color: #0174CF;
+    font-family: 'Calibri Light';
+    font-weight: bold;
+    font-size:x-large;
+}
+
+
+.Subtitulo
+{
+    color: #0174CF;
+    font-family: 'Calibri Light';
+    font-weight: bolder;
+    font-size:medium;
+    min-height:36px;
+    vertical-align:middle;
+    background-color: #F8F8F8;
+    width:97%;
+    margin-left:3px;
+    border-bottom:1px solid #CFCFCF;
+    padding:6px 0px 3px 10px;
+    
+}
+
+
+.TabelaMaster 
+{
+    width:100%;
+    border:none;
+    padding:0px 0px 0px 0px;
+    margin:0px 0px 0px 0px;
+    
+}
+
+
+.TextoAzulMedio
+{
+     font-family: Calibri;
+    font-weight: bolder;
+    color: #0174CF;
+}
+
+.TextoCinzaMedio
+{
+     font-family: Calibri;
+    font-weight: bolder;
+    color:#777777;
+    
+}
+
+
+.TextoCinzaPequeno
+{
+        font-family: Calibri;
+    font-weight: bolder;
+    color:#777777;
+    font-size:small;
+}
+
+
+
+
+/*
+Tabela Superior  LOGO | TEXTO | MENU
+*/
+.TabelaMenuSuperior
+{
+    width:100%;
+}
+.TabelaMenuSuperiorLogo
+{
+    width:218px;
+    
+}
+.TabelaMenuSuperiorTexto
+{
+    text-align:center;
+}
+.TabelaMenuSuperiorDireita
+{
+    width:55px;
+    text-align:right;
+}
+
+
+/* menu ASP */
+
+.TabelaMenuContainer
+{
+    width:100%;
+}
+
+
+
+/*Diretorias*/
+
+.Colunastop
+{
+    width: 97%;
+    background-color: #F8F8F8;
+    font-family: Calibri;
+    font-weight: bolder;
+    color: #0174CF;
+}
+
+
+
+
+/*
+
+
+Validações (DEfault.aspx)
+
+*/
+
+
+.Warper
+{
+    min-height: 100% !important;
+    height: auto !important;
+	height: 100%;
+	border:1px solid red;
+}
+
+.PV
+{
+    margin:0;
+    height: 100%;
+    
+}
+
+.PVfooter, .push {
+	height: 142px;
+}
+
+.lnkDetalhe a
+{
+    text-decoration:none;
+    color:Black;
+}
+
+

@@ -1,0 +1,1545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="ORG_AUDIT_TRAIL" EntityType="Model.Store.ORG_AUDIT_TRAIL" store:Type="Tables" Schema="ORGANOGRAMA_USER" />
+          <EntitySet Name="ORG_FUNCIONARIO_EXPORT_GD_MDL" EntityType="Model.Store.ORG_FUNCIONARIO_EXPORT_GD_MDL" store:Type="Tables" Schema="ORGANOGRAMA_USER" />
+          <EntitySet Name="ORG_FUNCIONARIO_EXPORT_TR_MDL" EntityType="Model.Store.ORG_FUNCIONARIO_EXPORT_TR_MDL" store:Type="Tables" Schema="ORGANOGRAMA_USER" />
+          <EntitySet Name="ORG_FUNCIONARIO_SUBSECAO" EntityType="Model.Store.ORG_FUNCIONARIO_SUBSECAO" store:Type="Tables" Schema="ORGANOGRAMA_USER" />
+          <EntitySet Name="ORG_HIERARQUIA" EntityType="Model.Store.ORG_HIERARQUIA" store:Type="Tables" Schema="ORGANOGRAMA_USER" />
+          <EntitySet Name="ORG_LISTA_SECOES_CONSOLIDADO" EntityType="Model.Store.ORG_LISTA_SECOES_CONSOLIDADO" store:Type="Tables" Schema="ORGANOGRAMA_USER" />
+          <EntitySet Name="ORG_CARGO" EntityType="Model.Store.ORG_CARGO" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_CARGO">
+            <DefiningQuery>SELECT 
+      "ORG_CARGO"."COD_CARGO" AS "COD_CARGO", 
+      "ORG_CARGO"."DSC_CARGO" AS "DSC_CARGO", 
+      "ORG_CARGO"."DSC_TIPO_FUNC" AS "DSC_TIPO_FUNC"
+      FROM "ORGANOGRAMA_USER"."ORG_CARGO" "ORG_CARGO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_EMPRESA" EntityType="Model.Store.ORG_EMPRESA" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_EMPRESA">
+            <DefiningQuery>SELECT 
+      "ORG_EMPRESA"."COD_EMPRESA" AS "COD_EMPRESA", 
+      "ORG_EMPRESA"."DESCRICAO" AS "DESCRICAO"
+      FROM "ORGANOGRAMA_USER"."ORG_EMPRESA" "ORG_EMPRESA"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_FUNCIONARIO" EntityType="Model.Store.ORG_FUNCIONARIO" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_FUNCIONARIO">
+            <DefiningQuery>SELECT 
+      "ORG_FUNCIONARIO"."CPF" AS "CPF", 
+      "ORG_FUNCIONARIO"."NOME" AS "NOME", 
+      "ORG_FUNCIONARIO"."CHAPA" AS "CHAPA", 
+      "ORG_FUNCIONARIO"."COD_EMPRESA" AS "COD_EMPRESA", 
+      "ORG_FUNCIONARIO"."NOME_EMPRESA" AS "NOME_EMPRESA", 
+      "ORG_FUNCIONARIO"."COD_FILIAL" AS "COD_FILIAL", 
+      "ORG_FUNCIONARIO"."NOME_FILIAL" AS "NOME_FILIAL", 
+      "ORG_FUNCIONARIO"."COD_SECAO" AS "COD_SECAO", 
+      "ORG_FUNCIONARIO"."NOME_SECAO" AS "NOME_SECAO", 
+      "ORG_FUNCIONARIO"."EMAIL" AS "EMAIL", 
+      "ORG_FUNCIONARIO"."DATA_ADMISSAO" AS "DATA_ADMISSAO", 
+      "ORG_FUNCIONARIO"."COD_CARGO" AS "COD_CARGO", 
+      "ORG_FUNCIONARIO"."NOME_CARGO" AS "NOME_CARGO", 
+      "ORG_FUNCIONARIO"."COD_TIPO_FUNC" AS "COD_TIPO_FUNC", 
+      "ORG_FUNCIONARIO"."DESC_TIPO_FUNC" AS "DESC_TIPO_FUNC", 
+      "ORG_FUNCIONARIO"."LOGIN" AS "LOGIN", 
+      "ORG_FUNCIONARIO"."SEXO" AS "SEXO", 
+      "ORG_FUNCIONARIO"."DATA_NASCIMENTO" AS "DATA_NASCIMENTO", 
+      "ORG_FUNCIONARIO"."PERFIL_PROFISSIONAL" AS "PERFIL_PROFISSIONAL"
+      FROM "ORGANOGRAMA_USER"."ORG_FUNCIONARIO" "ORG_FUNCIONARIO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_FUNCIONARIO_ALOCADO" EntityType="Model.Store.ORG_FUNCIONARIO_ALOCADO" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_FUNCIONARIO_ALOCADO">
+            <DefiningQuery>SELECT 
+      "ORG_FUNCIONARIO_ALOCADO"."NOME" AS "NOME", 
+      "ORG_FUNCIONARIO_ALOCADO"."CPF" AS "CPF", 
+      "ORG_FUNCIONARIO_ALOCADO"."COD_EMPRESA" AS "COD_EMPRESA", 
+      "ORG_FUNCIONARIO_ALOCADO"."NOME_EMPRESA" AS "NOME_EMPRESA", 
+      "ORG_FUNCIONARIO_ALOCADO"."COD_SECAO" AS "COD_SECAO", 
+      "ORG_FUNCIONARIO_ALOCADO"."NOME_SECAO" AS "NOME_SECAO", 
+      "ORG_FUNCIONARIO_ALOCADO"."COD_SECAO_SUP" AS "COD_SECAO_SUP", 
+      "ORG_FUNCIONARIO_ALOCADO"."NOME_SECAO_SUP" AS "NOME_SECAO_SUP", 
+      "ORG_FUNCIONARIO_ALOCADO"."COD_EMPRESA_SUP" AS "COD_EMPRESA_SUP", 
+      "ORG_FUNCIONARIO_ALOCADO"."GESTOR" AS "GESTOR", 
+      "ORG_FUNCIONARIO_ALOCADO"."GESTOR_EMAIL" AS "GESTOR_EMAIL", 
+      "ORG_FUNCIONARIO_ALOCADO"."TIPO_SECAO" AS "TIPO_SECAO", 
+      "ORG_FUNCIONARIO_ALOCADO"."EMAIL" AS "EMAIL"
+      FROM "ORGANOGRAMA_USER"."ORG_FUNCIONARIO_ALOCADO" "ORG_FUNCIONARIO_ALOCADO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_FUNCIONARIO_DISPONIVEL" EntityType="Model.Store.ORG_FUNCIONARIO_DISPONIVEL" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_FUNCIONARIO_DISPONIVEL">
+            <DefiningQuery>SELECT 
+      "ORG_FUNCIONARIO_DISPONIVEL"."CPF" AS "CPF", 
+      "ORG_FUNCIONARIO_DISPONIVEL"."NOME" AS "NOME", 
+      "ORG_FUNCIONARIO_DISPONIVEL"."COD_SECAO" AS "COD_SECAO"
+      FROM "ORGANOGRAMA_USER"."ORG_FUNCIONARIO_DISPONIVEL" "ORG_FUNCIONARIO_DISPONIVEL"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_FUNCIONARIO_DISPONIVEL_SUB" EntityType="Model.Store.ORG_FUNCIONARIO_DISPONIVEL_SUB" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_FUNCIONARIO_DISPONIVEL_SUB">
+            <DefiningQuery>SELECT 
+      "ORG_FUNCIONARIO_DISPONIVEL_SUB"."CPF" AS "CPF", 
+      "ORG_FUNCIONARIO_DISPONIVEL_SUB"."NOME" AS "NOME", 
+      "ORG_FUNCIONARIO_DISPONIVEL_SUB"."COD_SECAO" AS "COD_SECAO"
+      FROM "ORGANOGRAMA_USER"."ORG_FUNCIONARIO_DISPONIVEL_SUB" "ORG_FUNCIONARIO_DISPONIVEL_SUB"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_FUNCIONARIO_EXPORT_GD" EntityType="Model.Store.ORG_FUNCIONARIO_EXPORT_GD" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_FUNCIONARIO_EXPORT_GD">
+            <DefiningQuery>SELECT 
+      "ORG_FUNCIONARIO_EXPORT_GD"."COD_FUNCIONARIO" AS "COD_FUNCIONARIO", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."NUM_MATRICULA" AS "NUM_MATRICULA", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."COD_EMPRESA" AS "COD_EMPRESA", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."COD_ORGAO" AS "COD_ORGAO", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."COD_CARGO" AS "COD_CARGO", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."COD_SUPERVISOR" AS "COD_SUPERVISOR", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."DSC_LOGON" AS "DSC_LOGON", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."NOM_FUNCIONARIO" AS "NOM_FUNCIONARIO", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."SEXO" AS "SEXO", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."DAT_ADMISSAO" AS "DAT_ADMISSAO", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."DSC_EMAIL" AS "DSC_EMAIL", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."COD_TIPO_FUNC" AS "COD_TIPO_FUNC", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."DAT_NASCIMENTO" AS "DAT_NASCIMENTO", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."COD_FILIAL" AS "COD_FILIAL", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."NOME_SECAO" AS "NOME_SECAO", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."NOME_SECAO_SUP" AS "NOME_SECAO_SUP", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."COD_SECAO_SUP" AS "COD_SECAO_SUP", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."COD_DIRETORIA" AS "COD_DIRETORIA", 
+      "ORG_FUNCIONARIO_EXPORT_GD"."NOME_DIRETORIA" AS "NOME_DIRETORIA"
+      FROM "ORGANOGRAMA_USER"."ORG_FUNCIONARIO_EXPORT_GD" "ORG_FUNCIONARIO_EXPORT_GD"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_FUNCIONARIO_EXPORT_TR" EntityType="Model.Store.ORG_FUNCIONARIO_EXPORT_TR" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_FUNCIONARIO_EXPORT_TR">
+            <DefiningQuery>SELECT 
+      "ORG_FUNCIONARIO_EXPORT_TR"."FIRST_NAME" AS "FIRST_NAME", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."LAST_NAME" AS "LAST_NAME", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."EMAIL" AS "EMAIL", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."USERNAME" AS "USERNAME", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."PASSWORD" AS "PASSWORD", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."PERSONSTATUS" AS "PERSONSTATUS", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."USERSTATUS" AS "USERSTATUS", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."CPF" AS "CPF", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."COD_EMPRESA" AS "COD_EMPRESA", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."NOME_EMPRESA" AS "NOME_EMPRESA", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."COD_FILIAL" AS "COD_FILIAL", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."NOME_FILIAL" AS "NOME_FILIAL", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."DAT_ADMISSAO" AS "DAT_ADMISSAO", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."COD_SECAO" AS "COD_SECAO", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."NOME_SECAO" AS "NOME_SECAO", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."CHAPA" AS "CHAPA", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."COD_CARGO" AS "COD_CARGO", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."NOME_FUNCAO" AS "NOME_FUNCAO", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."CPF_GESTOR" AS "CPF_GESTOR", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."NOME_GESTOR" AS "NOME_GESTOR", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."EMAIL_GESTOR" AS "EMAIL_GESTOR", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."SEXO" AS "SEXO", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."DATA_NASCIMENTO" AS "DATA_NASCIMENTO", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."COD_TIPO_FUNC" AS "COD_TIPO_FUNC", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."DESC_TIPO_FUNC" AS "DESC_TIPO_FUNC", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."COD_SECAO_SUP" AS "COD_SECAO_SUP", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."NOME_SECAO_SUP" AS "NOME_SECAO_SUP", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."COD_DIRETORIA" AS "COD_DIRETORIA", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."NOME_DIRETORIA" AS "NOME_DIRETORIA", 
+      "ORG_FUNCIONARIO_EXPORT_TR"."PERFIL_PROFISSIONAL" AS "PERFIL_PROFISSIONAL"
+      FROM "ORGANOGRAMA_USER"."ORG_FUNCIONARIO_EXPORT_TR" "ORG_FUNCIONARIO_EXPORT_TR"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_LISTA_DIRETORIAS" EntityType="Model.Store.ORG_LISTA_DIRETORIAS" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_LISTA_DIRETORIAS">
+            <DefiningQuery>SELECT 
+      "ORG_LISTA_DIRETORIAS"."COD_EMPRESA" AS "COD_EMPRESA", 
+      "ORG_LISTA_DIRETORIAS"."COD_SECAO" AS "COD_SECAO", 
+      "ORG_LISTA_DIRETORIAS"."NOME_SECAO" AS "NOME_SECAO", 
+      "ORG_LISTA_DIRETORIAS"."TT" AS "TT", 
+      "ORG_LISTA_DIRETORIAS"."DIRETORIA" AS "DIRETORIA"
+      FROM "ORGANOGRAMA_USER"."ORG_LISTA_DIRETORIAS" "ORG_LISTA_DIRETORIAS"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_LISTA_SECOES" EntityType="Model.Store.ORG_LISTA_SECOES" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_LISTA_SECOES">
+            <DefiningQuery>SELECT 
+      "ORG_LISTA_SECOES"."COD_EMPRESA" AS "COD_EMPRESA", 
+      "ORG_LISTA_SECOES"."COD_SECAO" AS "COD_SECAO", 
+      "ORG_LISTA_SECOES"."NOME_FILIAL" AS "NOME_FILIAL", 
+      "ORG_LISTA_SECOES"."COD_FILIAL" AS "COD_FILIAL", 
+      "ORG_LISTA_SECOES"."NOME_RM" AS "NOME_RM", 
+      "ORG_LISTA_SECOES"."NOME_MOD" AS "NOME_MOD", 
+      "ORG_LISTA_SECOES"."NOME_MODIFICADO" AS "NOME_MODIFICADO", 
+      "ORG_LISTA_SECOES"."NOME_SECAO_FINAL" AS "NOME_SECAO_FINAL", 
+      "ORG_LISTA_SECOES"."COD_SECAO_SUP" AS "COD_SECAO_SUP", 
+      "ORG_LISTA_SECOES"."COD_EMPRESA_SUP" AS "COD_EMPRESA_SUP", 
+      "ORG_LISTA_SECOES"."NOME_SECAO_SUP" AS "NOME_SECAO_SUP", 
+      "ORG_LISTA_SECOES"."CPF_GESTOR_RM" AS "CPF_GESTOR_RM", 
+      "ORG_LISTA_SECOES"."NOME_GESTOR_RM" AS "NOME_GESTOR_RM", 
+      "ORG_LISTA_SECOES"."EMAIL_GESTOR_RM" AS "EMAIL_GESTOR_RM", 
+      "ORG_LISTA_SECOES"."GESTOR_MOD" AS "GESTOR_MOD", 
+      "ORG_LISTA_SECOES"."CPF_GESTOR_MOD" AS "CPF_GESTOR_MOD", 
+      "ORG_LISTA_SECOES"."NOME_GESTOR_MOD" AS "NOME_GESTOR_MOD", 
+      "ORG_LISTA_SECOES"."EMAIL_GESTOR_MOD" AS "EMAIL_GESTOR_MOD", 
+      "ORG_LISTA_SECOES"."DIRETORIA" AS "DIRETORIA", 
+      "ORG_LISTA_SECOES"."DIRETORIA_COD" AS "DIRETORIA_COD", 
+      "ORG_LISTA_SECOES"."PUBLICO" AS "PUBLICO", 
+      "ORG_LISTA_SECOES"."POSSUI_SUPERIOR" AS "POSSUI_SUPERIOR", 
+      "ORG_LISTA_SECOES"."POSSUI_FILHAS" AS "POSSUI_FILHAS"
+      FROM "ORGANOGRAMA_USER"."ORG_LISTA_SECOES" "ORG_LISTA_SECOES"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_LISTA_SECOES_SIMPLES" EntityType="Model.Store.ORG_LISTA_SECOES_SIMPLES" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_LISTA_SECOES_SIMPLES">
+            <DefiningQuery>SELECT 
+      "ORG_LISTA_SECOES_SIMPLES"."COD_SECAO" AS "COD_SECAO", 
+      "ORG_LISTA_SECOES_SIMPLES"."COD_EMPRESA" AS "COD_EMPRESA", 
+      "ORG_LISTA_SECOES_SIMPLES"."NOME_SECAO" AS "NOME_SECAO", 
+      "ORG_LISTA_SECOES_SIMPLES"."COD_EMPRESA_SUP" AS "COD_EMPRESA_SUP", 
+      "ORG_LISTA_SECOES_SIMPLES"."COD_SECAO_SUP" AS "COD_SECAO_SUP", 
+      "ORG_LISTA_SECOES_SIMPLES"."SECAO_SUP" AS "SECAO_SUP", 
+      "ORG_LISTA_SECOES_SIMPLES"."DIRETORIA" AS "DIRETORIA", 
+      "ORG_LISTA_SECOES_SIMPLES"."PUBLICO" AS "PUBLICO", 
+      "ORG_LISTA_SECOES_SIMPLES"."CPF_GESTOR" AS "CPF_GESTOR", 
+      "ORG_LISTA_SECOES_SIMPLES"."GESTOR" AS "GESTOR", 
+      "ORG_LISTA_SECOES_SIMPLES"."POSSUI_SUP" AS "POSSUI_SUP", 
+      "ORG_LISTA_SECOES_SIMPLES"."EMAIL_GESTOR" AS "EMAIL_GESTOR"
+      FROM "ORGANOGRAMA_USER"."ORG_LISTA_SECOES_SIMPLES" "ORG_LISTA_SECOES_SIMPLES"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_LISTA_SUBSECAO" EntityType="Model.Store.ORG_LISTA_SUBSECAO" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_LISTA_SUBSECAO">
+            <DefiningQuery>SELECT 
+      "ORG_LISTA_SUBSECAO"."COD_EMPRESA" AS "COD_EMPRESA", 
+      "ORG_LISTA_SUBSECAO"."COD_SECAO" AS "COD_SECAO", 
+      "ORG_LISTA_SUBSECAO"."NOME" AS "NOME", 
+      "ORG_LISTA_SUBSECAO"."COD_SECAO_SUP" AS "COD_SECAO_SUP", 
+      "ORG_LISTA_SUBSECAO"."NOME_SECAO_SUP" AS "NOME_SECAO_SUP", 
+      "ORG_LISTA_SUBSECAO"."GESTOR" AS "GESTOR", 
+      "ORG_LISTA_SUBSECAO"."DIRETORIA" AS "DIRETORIA", 
+      "ORG_LISTA_SUBSECAO"."DIRETORIA_COD" AS "DIRETORIA_COD"
+      FROM "ORGANOGRAMA_USER"."ORG_LISTA_SUBSECAO" "ORG_LISTA_SUBSECAO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_LOCAL_TRABALHO" EntityType="Model.Store.ORG_LOCAL_TRABALHO" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_LOCAL_TRABALHO">
+            <DefiningQuery>SELECT 
+      "ORG_LOCAL_TRABALHO"."COD_LOCAL_TRABALHO" AS "COD_LOCAL_TRABALHO", 
+      "ORG_LOCAL_TRABALHO"."NOM_LOCAL_TRABALHO" AS "NOM_LOCAL_TRABALHO"
+      FROM "ORGANOGRAMA_USER"."ORG_LOCAL_TRABALHO" "ORG_LOCAL_TRABALHO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_SECAO" EntityType="Model.Store.ORG_SECAO" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_SECAO">
+            <DefiningQuery>SELECT 
+      "ORG_SECAO"."COD_EMPRESA" AS "COD_EMPRESA", 
+      "ORG_SECAO"."NOME_EMPRESA" AS "NOME_EMPRESA", 
+      "ORG_SECAO"."COD_FILIAL" AS "COD_FILIAL", 
+      "ORG_SECAO"."NOME_FILIAL" AS "NOME_FILIAL", 
+      "ORG_SECAO"."COD_SECAO" AS "COD_SECAO", 
+      "ORG_SECAO"."NOME_SECAO" AS "NOME_SECAO", 
+      "ORG_SECAO"."CPF_GESTOR" AS "CPF_GESTOR"
+      FROM "ORGANOGRAMA_USER"."ORG_SECAO" "ORG_SECAO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_TIPO_FUNCIONARIO" EntityType="Model.Store.ORG_TIPO_FUNCIONARIO" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_TIPO_FUNCIONARIO">
+            <DefiningQuery>SELECT 
+      "ORG_TIPO_FUNCIONARIO"."COD_TIPO_FUNCIONARIO" AS "COD_TIPO_FUNCIONARIO", 
+      "ORG_TIPO_FUNCIONARIO"."NOM_TIPO_FUNCIONARIO" AS "NOM_TIPO_FUNCIONARIO"
+      FROM "ORGANOGRAMA_USER"."ORG_TIPO_FUNCIONARIO" "ORG_TIPO_FUNCIONARIO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORG_VALIDACAO_04" EntityType="Model.Store.ORG_VALIDACAO_04" store:Type="Views" store:Schema="ORGANOGRAMA_USER" store:Name="ORG_VALIDACAO_04">
+            <DefiningQuery>SELECT 
+      "ORG_VALIDACAO_04"."COD_EMPRESA" AS "COD_EMPRESA", 
+      "ORG_VALIDACAO_04"."EMPRESA" AS "EMPRESA", 
+      "ORG_VALIDACAO_04"."NOME" AS "NOME", 
+      "ORG_VALIDACAO_04"."COD_SECAO" AS "COD_SECAO", 
+      "ORG_VALIDACAO_04"."NOME_SECAO" AS "NOME_SECAO", 
+      "ORG_VALIDACAO_04"."CPF_GESTOR" AS "CPF_GESTOR", 
+      "ORG_VALIDACAO_04"."SECAO_GESTOR" AS "SECAO_GESTOR", 
+      "ORG_VALIDACAO_04"."SCBP" AS "SCBP"
+      FROM "ORGANOGRAMA_USER"."ORG_VALIDACAO_04" "ORG_VALIDACAO_04"</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="ORG_AUDIT_TRAIL">
+          <Key>
+            <PropertyRef Name="ID_AUDIT" />
+          </Key>
+          <Property Name="ID_AUDIT" Type="number" Nullable="false" />
+          <Property Name="USUARIO" Type="varchar2" MaxLength="100" />
+          <Property Name="DATA_HORA" Type="timestamp with local time zone" />
+          <Property Name="OPERACAO" Type="varchar2" MaxLength="100" />
+          <Property Name="VL_ANTERIOR" Type="varchar2" />
+          <Property Name="VL_ATUAL" Type="varchar2" />
+          <Property Name="IP" Type="varchar2" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="ORG_FUNCIONARIO_EXPORT_GD_MDL">
+          <Key>
+            <PropertyRef Name="ID_LINHA" />
+          </Key>
+          <Property Name="COD_FUNCIONARIO" Type="varchar2" MaxLength="50" />
+          <Property Name="NUM_MATRICULA" Type="varchar2" MaxLength="50" />
+          <Property Name="COD_EMPRESA" Type="varchar2" MaxLength="50" />
+          <Property Name="COD_ORGAO" Type="varchar2" MaxLength="50" />
+          <Property Name="COD_CARGO" Type="varchar2" MaxLength="50" />
+          <Property Name="COD_SUPERVISOR" Type="varchar2" MaxLength="50" />
+          <Property Name="DSC_DOMINIO" Type="varchar2" MaxLength="20" />
+          <Property Name="DSC_LOGON" Type="varchar2" MaxLength="50" />
+          <Property Name="DSC_SENHA" Type="varchar2" MaxLength="20" />
+          <Property Name="NOM_FUNCIONARIO" Type="varchar2" MaxLength="100" />
+          <Property Name="SEXO" Type="varchar2" MaxLength="1" />
+          <Property Name="DAT_ADMISSAO" Type="varchar2" MaxLength="10" />
+          <Property Name="DSC_EMAIL" Type="varchar2" MaxLength="160" />
+          <Property Name="COD_TIPO_FUNC" Type="varchar2" MaxLength="1" />
+          <Property Name="COD_TIPO_USUARIO" Type="varchar2" MaxLength="20" />
+          <Property Name="DAT_NASCIMENTO" Type="varchar2" MaxLength="10" />
+          <Property Name="COD_FILIAL" Type="varchar2" MaxLength="20" />
+          <Property Name="COD_CPF" Type="varchar2" MaxLength="20" />
+          <Property Name="DSC_APELIDO" Type="varchar2" MaxLength="40" />
+          <Property Name="DAT_INICIO_FERIAS" Type="varchar2" MaxLength="10" />
+          <Property Name="DAT_FIM_FERIAS" Type="varchar2" MaxLength="10" />
+          <Property Name="COD_SUPERVISOR_FUNCIONAL" Type="varchar2" MaxLength="20" />
+          <Property Name="DSC_GRADE_SALARIAL" Type="varchar2" MaxLength="20" />
+          <Property Name="DAT_INICIO_CARGO" Type="varchar2" MaxLength="10" />
+          <Property Name="COD_IDIOMA_PREF" Type="varchar2" MaxLength="20" />
+          <Property Name="COD_PAIS" Type="varchar2" MaxLength="20" />
+          <Property Name="COD_UF" Type="varchar2" MaxLength="20" />
+          <Property Name="NOME_SECAO" Type="varchar2" MaxLength="90" />
+          <Property Name="NOME_SECAO_SUP" Type="varchar2" MaxLength="90" />
+          <Property Name="COD_SECAO_SUP" Type="varchar2" MaxLength="20" />
+          <Property Name="COD_DIRETORIA" Type="varchar2" MaxLength="20" />
+          <Property Name="NOME_DIRETORIA" Type="varchar2" MaxLength="90" />
+          <Property Name="ID_LINHA" Type="number" Nullable="false" />
+          <Property Name="CARGO_COD_CARGO" Type="varchar2" MaxLength="30" />
+          <Property Name="CARGO_DSC_CARGO" Type="varchar2" MaxLength="100" />
+          <Property Name="EMPRESA_COD_EMPRESA" Type="varchar2" MaxLength="30" />
+          <Property Name="EMPRESA_NOM_EMPRESA" Type="varchar2" MaxLength="100" />
+          <Property Name="LOC_TRAB_COD_LOCAL" Type="varchar2" MaxLength="30" />
+          <Property Name="LOC_TRAB_NOM_LOCAL_TRABALHO" Type="varchar2" MaxLength="100" />
+          <Property Name="TIPO_FUNC_COD_TIPO_FUNCIONARIO" Type="varchar2" MaxLength="30" />
+          <Property Name="TIPO_FUNC_NOM_TIPO_FUNCIONARIO" Type="varchar2" MaxLength="100" />
+          <Property Name="ORGAOS_COD_ORGAO" Type="varchar2" MaxLength="30" />
+          <Property Name="ORGAOS_COD_ORGAO_SUPERIOR" Type="varchar2" MaxLength="30" />
+          <Property Name="ORGAOS_COD_DIRETORIA" Type="varchar2" MaxLength="30" />
+          <Property Name="ORGAOS_NOM_ORGAO" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ORG_FUNCIONARIO_EXPORT_TR_MDL">
+          <Key>
+            <PropertyRef Name="ID_LINHA" />
+          </Key>
+          <Property Name="FIRST_NAME" Type="varchar2" MaxLength="280" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="280" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="60" />
+          <Property Name="USERNAME" Type="varchar2" MaxLength="11" />
+          <Property Name="PASSWORD" Type="varchar2" MaxLength="11" />
+          <Property Name="PERSONSTATUS" Type="char" MaxLength="6" />
+          <Property Name="USERSTATUS" Type="char" MaxLength="6" />
+          <Property Name="CPF" Type="varchar2" MaxLength="11" />
+          <Property Name="COD_EMPRESA" Type="varchar2" MaxLength="1" />
+          <Property Name="NOME_EMPRESA" Type="varchar2" MaxLength="60" />
+          <Property Name="COD_FILIAL" Type="varchar2" MaxLength="2" />
+          <Property Name="NOME_FILIAL" Type="varchar2" MaxLength="60" />
+          <Property Name="DAT_ADMISSAO" Type="varchar2" MaxLength="10" />
+          <Property Name="COD_SECAO" Type="varchar2" MaxLength="16" />
+          <Property Name="NOME_SECAO" Type="varchar2" MaxLength="90" />
+          <Property Name="CHAPA" Type="varchar2" MaxLength="5" />
+          <Property Name="COD_CARGO" Type="varchar2" MaxLength="9" />
+          <Property Name="NOME_FUNCAO" Type="varchar2" MaxLength="60" />
+          <Property Name="CPF_GESTOR" Type="varchar2" MaxLength="11" />
+          <Property Name="NOME_GESTOR" Type="varchar2" MaxLength="70" />
+          <Property Name="EMAIL_GESTOR" Type="varchar2" MaxLength="60" />
+          <Property Name="SEXO" Type="varchar2" MaxLength="1" />
+          <Property Name="DATA_NASCIMENTO" Type="varchar2" MaxLength="10" />
+          <Property Name="COD_TIPO_FUNC" Type="varchar2" MaxLength="1" />
+          <Property Name="DESC_TIPO_FUNC" Type="varchar2" MaxLength="60" />
+          <Property Name="COD_SECAO_SUP" Type="varchar2" MaxLength="20" />
+          <Property Name="NOME_SECAO_SUP" Type="varchar2" MaxLength="90" />
+          <Property Name="COD_DIRETORIA" Type="varchar2" MaxLength="20" />
+          <Property Name="NOME_DIRETORIA" Type="varchar2" MaxLength="90" />
+          <Property Name="ID_LINHA" Type="number" Nullable="false" />
+          <Property Name="PERFIL_PROFISSIONAL" Type="varchar2" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="ORG_FUNCIONARIO_SUBSECAO">
+          <Key>
+            <PropertyRef Name="CPF" />
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="CPF" Type="varchar2" Nullable="false" MaxLength="13" />
+          <Property Name="COD_EMPRESA" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="COD_SECAO" Type="varchar2" Nullable="false" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="ORG_HIERARQUIA">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="COD_SECAO" Type="varchar2" Nullable="false" MaxLength="16" />
+          <Property Name="COD_EMPRESA_SUP" Type="varchar2" MaxLength="2" />
+          <Property Name="COD_SECAO_SUP" Type="varchar2" MaxLength="13" />
+          <Property Name="POSSUI_SUPERIOR" Type="char" MaxLength="1" />
+          <Property Name="NOME" Type="varchar2" MaxLength="50" />
+          <Property Name="NOME_MOD" Type="char" MaxLength="1" />
+          <Property Name="GESTOR" Type="varchar2" MaxLength="13" />
+          <Property Name="GESTOR_MOD" Type="char" MaxLength="1" />
+          <Property Name="SUBSECAO" Type="char" MaxLength="1" />
+          <Property Name="DIRETORIA" Type="char" MaxLength="1" />
+          <Property Name="PUBLICO" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="ORG_LISTA_SECOES_CONSOLIDADO">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="COD_SECAO" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="NOME_FILIAL" Type="varchar2" MaxLength="66" />
+          <Property Name="COD_FILIAL" Type="varchar2" MaxLength="20" />
+          <Property Name="NOME_SECAO" Type="varchar2" MaxLength="90" />
+          <Property Name="COD_SECAO_SUP" Type="varchar2" MaxLength="13" />
+          <Property Name="COD_EMPRESA_SUP" Type="varchar2" MaxLength="2" />
+          <Property Name="NOME_SECAO_SUP" Type="varchar2" MaxLength="90" />
+          <Property Name="CPF_GESTOR" Type="varchar2" MaxLength="11" />
+          <Property Name="NOME_GESTOR" Type="varchar2" MaxLength="70" />
+          <Property Name="TIPO" Type="varchar2" MaxLength="8" />
+          <Property Name="POSSUI_SUPERIOR" Type="char" MaxLength="1" />
+          <Property Name="PUBLICO" Type="char" MaxLength="1" />
+          <Property Name="COD_DIRETORIA" Type="varchar2" MaxLength="20" />
+          <Property Name="NOME_DIRETORIA" Type="varchar2" MaxLength="90" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_CARGO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_CARGO">
+          <Key>
+            <PropertyRef Name="COD_CARGO" />
+          </Key>
+          <Property Name="COD_CARGO" Type="varchar2" Nullable="false" MaxLength="9" />
+          <Property Name="DSC_CARGO" Type="varchar2" MaxLength="60" />
+          <Property Name="DSC_TIPO_FUNC" Type="varchar2" MaxLength="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_EMPRESA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_EMPRESA">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="DESCRICAO" Type="varchar2" MaxLength="60" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_FUNCIONARIO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_FUNCIONARIO">
+          <Key>
+            <PropertyRef Name="CPF" />
+          </Key>
+          <Property Name="CPF" Type="varchar2" Nullable="false" MaxLength="11" />
+          <Property Name="NOME" Type="varchar2" MaxLength="70" />
+          <Property Name="CHAPA" Type="varchar2" MaxLength="5" />
+          <Property Name="COD_EMPRESA" Type="varchar2" MaxLength="1" />
+          <Property Name="NOME_EMPRESA" Type="varchar2" MaxLength="60" />
+          <Property Name="COD_FILIAL" Type="varchar2" MaxLength="2" />
+          <Property Name="NOME_FILIAL" Type="varchar2" MaxLength="60" />
+          <Property Name="COD_SECAO" Type="varchar2" MaxLength="13" />
+          <Property Name="NOME_SECAO" Type="varchar2" MaxLength="60" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="60" />
+          <Property Name="DATA_ADMISSAO" Type="varchar2" MaxLength="10" />
+          <Property Name="COD_CARGO" Type="varchar2" MaxLength="9" />
+          <Property Name="NOME_CARGO" Type="varchar2" MaxLength="60" />
+          <Property Name="COD_TIPO_FUNC" Type="varchar2" MaxLength="1" />
+          <Property Name="DESC_TIPO_FUNC" Type="varchar2" MaxLength="60" />
+          <Property Name="LOGIN" Type="varchar2" MaxLength="60" />
+          <Property Name="SEXO" Type="varchar2" MaxLength="1" />
+          <Property Name="DATA_NASCIMENTO" Type="varchar2" MaxLength="10" />
+          <Property Name="PERFIL_PROFISSIONAL" Type="varchar2" MaxLength="60" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_ALOCADO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_FUNCIONARIO_ALOCADO">
+          <Key>
+            <PropertyRef Name="CPF" />
+            
+            
+          </Key>
+          <Property Name="NOME" Type="varchar2" MaxLength="70" />
+          <Property Name="CPF" Type="varchar2" Nullable="false" MaxLength="11" />
+          <Property Name="COD_EMPRESA" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="NOME_EMPRESA" Type="varchar2" MaxLength="60" />
+          <Property Name="COD_SECAO" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="NOME_SECAO" Type="varchar2" MaxLength="90" />
+          <Property Name="COD_SECAO_SUP" Type="varchar2" MaxLength="13" />
+          <Property Name="NOME_SECAO_SUP" Type="varchar2" MaxLength="90" />
+          <Property Name="COD_EMPRESA_SUP" Type="varchar2" MaxLength="2" />
+          <Property Name="GESTOR" Type="varchar2" MaxLength="70" />
+          <Property Name="GESTOR_EMAIL" Type="varchar2" MaxLength="60" />
+          <Property Name="TIPO_SECAO" Type="varchar2" MaxLength="8" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="60" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_DISPONIVEL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_FUNCIONARIO_DISPONIVEL">
+          <Key>
+            <PropertyRef Name="CPF" />
+            <PropertyRef Name="COD_SECAO" />
+            <PropertyRef Name="NOME" />
+          </Key>
+          <Property Name="CPF" Type="varchar2" Nullable="false" MaxLength="11" />
+          <Property Name="NOME" Type="varchar2" MaxLength="70" Nullable="false" />
+          <Property Name="COD_SECAO" Type="varchar2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_DISPONIVEL_SUB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_FUNCIONARIO_DISPONIVEL_SUB">
+          <Key>
+            <PropertyRef Name="CPF" />
+            <PropertyRef Name="COD_SECAO" />
+            <PropertyRef Name="NOME" />
+          </Key>
+          <Property Name="CPF" Type="varchar2" Nullable="false" MaxLength="11" />
+          <Property Name="NOME" Type="varchar2" MaxLength="70" Nullable="false" />
+          <Property Name="COD_SECAO" Type="varchar2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DSC_DOMINIO' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DSC_SENHA' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'COD_TIPO_USUARIO' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'COD_CPF' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DSC_APELIDO' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DAT_INICIO_FERIAS' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DAT_FIM_FERIAS' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'COD_SUPERVISOR_FUNCIONAL' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DSC_GRADE_SALARIAL' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'DAT_INICIO_CARGO' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'COD_IDIOMA_PREF' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'COD_PAIS' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      warning 6006: The facet 'MaxLength' with a value '0' is outside the range 1-2000 specified by the facet description.  The column 'COD_UF' in the table 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_GD' was excluded.
+      -->
+        <EntityType Name="ORG_FUNCIONARIO_EXPORT_GD">
+          <Key>
+            <PropertyRef Name="COD_FUNCIONARIO" />
+          </Key>
+          <Property Name="COD_FUNCIONARIO" Type="varchar2" Nullable="false" MaxLength="11" />
+          <Property Name="NUM_MATRICULA" Type="varchar2" MaxLength="5" />
+          <Property Name="COD_EMPRESA" Type="varchar2" MaxLength="1" />
+          <Property Name="COD_ORGAO" Type="varchar2" MaxLength="20" />
+          <Property Name="COD_CARGO" Type="varchar2" MaxLength="9" />
+          <Property Name="COD_SUPERVISOR" Type="varchar2" MaxLength="13" />
+          <Property Name="DSC_LOGON" Type="varchar2" MaxLength="60" />
+          <Property Name="NOM_FUNCIONARIO" Type="varchar2" MaxLength="70" />
+          <Property Name="SEXO" Type="varchar2" MaxLength="1" />
+          <Property Name="DAT_ADMISSAO" Type="varchar2" MaxLength="10" />
+          <Property Name="DSC_EMAIL" Type="varchar2" MaxLength="60" />
+          <Property Name="COD_TIPO_FUNC" Type="varchar2" MaxLength="1" />
+          <Property Name="DAT_NASCIMENTO" Type="varchar2" MaxLength="10" />
+          <Property Name="COD_FILIAL" Type="varchar2" MaxLength="2" />
+          <Property Name="NOME_SECAO" Type="varchar2" MaxLength="90" />
+          <Property Name="NOME_SECAO_SUP" Type="varchar2" MaxLength="90" />
+          <Property Name="COD_SECAO_SUP" Type="varchar2" MaxLength="13" />
+          <Property Name="COD_DIRETORIA" Type="varchar2" MaxLength="20" />
+          <Property Name="NOME_DIRETORIA" Type="varchar2" MaxLength="90" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_FUNCIONARIO_EXPORT_TR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_FUNCIONARIO_EXPORT_TR">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+            <PropertyRef Name="PASSWORD" />
+            <PropertyRef Name="CPF" />
+            <PropertyRef Name="COD_CARGO" />
+          </Key>
+          <Property Name="FIRST_NAME" Type="varchar2" MaxLength="280" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="280" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="60" />
+          <Property Name="USERNAME" Type="varchar2" Nullable="false" MaxLength="11" />
+          <Property Name="PASSWORD" Type="varchar2" Nullable="false" MaxLength="11" />
+          <Property Name="PERSONSTATUS" Type="char" MaxLength="6" />
+          <Property Name="USERSTATUS" Type="char" MaxLength="6" />
+          <Property Name="CPF" Type="varchar2" Nullable="false" MaxLength="11" />
+          <Property Name="COD_EMPRESA" Type="varchar2" MaxLength="1" />
+          <Property Name="NOME_EMPRESA" Type="varchar2" MaxLength="60" />
+          <Property Name="COD_FILIAL" Type="varchar2" MaxLength="2" />
+          <Property Name="NOME_FILIAL" Type="varchar2" MaxLength="60" />
+          <Property Name="DAT_ADMISSAO" Type="varchar2" MaxLength="10" />
+          <Property Name="COD_SECAO" Type="varchar2" MaxLength="20" />
+          <Property Name="NOME_SECAO" Type="varchar2" MaxLength="90" />
+          <Property Name="CHAPA" Type="varchar2" MaxLength="5" />
+          <Property Name="COD_CARGO" Type="varchar2" Nullable="false" MaxLength="9" />
+          <Property Name="NOME_FUNCAO" Type="varchar2" MaxLength="60" />
+          <Property Name="CPF_GESTOR" Type="varchar2" MaxLength="11" />
+          <Property Name="NOME_GESTOR" Type="varchar2" MaxLength="70" />
+          <Property Name="EMAIL_GESTOR" Type="varchar2" MaxLength="60" />
+          <Property Name="SEXO" Type="varchar2" MaxLength="1" />
+          <Property Name="DATA_NASCIMENTO" Type="varchar2" MaxLength="10" />
+          <Property Name="COD_TIPO_FUNC" Type="varchar2" MaxLength="1" />
+          <Property Name="DESC_TIPO_FUNC" Type="varchar2" MaxLength="60" />
+          <Property Name="COD_SECAO_SUP" Type="varchar2" MaxLength="13" />
+          <Property Name="NOME_SECAO_SUP" Type="varchar2" MaxLength="90" />
+          <Property Name="COD_DIRETORIA" Type="varchar2" MaxLength="20" />
+          <Property Name="NOME_DIRETORIA" Type="varchar2" MaxLength="90" />
+          <Property Name="PERFIL_PROFISSIONAL" Type="varchar2" MaxLength="60" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_LISTA_DIRETORIAS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_LISTA_DIRETORIAS">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="COD_SECAO" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="NOME_SECAO" Type="varchar2" MaxLength="90" />
+          <Property Name="TT" Type="varchar2" MaxLength="105" />
+          <Property Name="DIRETORIA" Type="varchar2" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_LISTA_SECOES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_LISTA_SECOES">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="COD_SECAO" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="NOME_FILIAL" Type="varchar2" MaxLength="66" />
+          <Property Name="COD_FILIAL" Type="varchar2" MaxLength="20" />
+          <Property Name="NOME_RM" Type="varchar2" MaxLength="90" />
+          <Property Name="NOME_MOD" Type="varchar2" MaxLength="1" />
+          <Property Name="NOME_MODIFICADO" Type="varchar2" MaxLength="50" />
+          <Property Name="NOME_SECAO_FINAL" Type="varchar2" MaxLength="90" />
+          <Property Name="COD_SECAO_SUP" Type="varchar2" MaxLength="20" />
+          <Property Name="COD_EMPRESA_SUP" Type="varchar2" MaxLength="10" />
+          <Property Name="NOME_SECAO_SUP" Type="varchar2" MaxLength="90" />
+          <Property Name="CPF_GESTOR_RM" Type="varchar2" MaxLength="11" />
+          <Property Name="NOME_GESTOR_RM" Type="varchar2" MaxLength="70" />
+          <Property Name="EMAIL_GESTOR_RM" Type="varchar2" MaxLength="60" />
+          <Property Name="GESTOR_MOD" Type="varchar2" MaxLength="1" />
+          <Property Name="CPF_GESTOR_MOD" Type="varchar2" MaxLength="11" />
+          <Property Name="NOME_GESTOR_MOD" Type="varchar2" MaxLength="70" />
+          <Property Name="EMAIL_GESTOR_MOD" Type="varchar2" MaxLength="60" />
+          <Property Name="DIRETORIA" Type="varchar2" MaxLength="90" />
+          <Property Name="DIRETORIA_COD" Type="varchar2" MaxLength="20" />
+          <Property Name="PUBLICO" Type="varchar2" MaxLength="1" />
+          <Property Name="POSSUI_SUPERIOR" Type="varchar2" MaxLength="1" />
+          <Property Name="POSSUI_FILHAS" Type="char" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_LISTA_SECOES_SIMPLES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_LISTA_SECOES_SIMPLES">
+          <Key>
+            <PropertyRef Name="COD_SECAO" />
+            <PropertyRef Name="COD_EMPRESA" />
+          </Key>
+          <Property Name="COD_SECAO" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="COD_EMPRESA" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="NOME_SECAO" Type="varchar2" MaxLength="90" />
+          <Property Name="COD_EMPRESA_SUP" Type="varchar2" MaxLength="2" />
+          <Property Name="COD_SECAO_SUP" Type="varchar2" MaxLength="13" />
+          <Property Name="SECAO_SUP" Type="varchar2" MaxLength="90" />
+          <Property Name="DIRETORIA" Type="varchar2" MaxLength="1" />
+          <Property Name="PUBLICO" Type="char" MaxLength="1" />
+          <Property Name="CPF_GESTOR" Type="varchar2" MaxLength="11" />
+          <Property Name="GESTOR" Type="varchar2" MaxLength="70" />
+          <Property Name="POSSUI_SUP" Type="char" MaxLength="1" />
+          <Property Name="EMAIL_GESTOR" Type="varchar2" MaxLength="60" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_LISTA_SUBSECAO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_LISTA_SUBSECAO">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="COD_SECAO" Type="varchar2" Nullable="false" MaxLength="16" />
+          <Property Name="NOME" Type="varchar2" MaxLength="50" />
+          <Property Name="COD_SECAO_SUP" Type="varchar2" MaxLength="13" />
+          <Property Name="NOME_SECAO_SUP" Type="varchar2" MaxLength="90" />
+          <Property Name="GESTOR" Type="varchar2" MaxLength="70" />
+          <Property Name="DIRETORIA" Type="varchar2" MaxLength="90" />
+          <Property Name="DIRETORIA_COD" Type="varchar2" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_LOCAL_TRABALHO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_LOCAL_TRABALHO">
+          <Key>
+            <PropertyRef Name="COD_LOCAL_TRABALHO" />
+          </Key>
+          <Property Name="COD_LOCAL_TRABALHO" Type="number" Nullable="false" />
+          <Property Name="NOM_LOCAL_TRABALHO" Type="varchar2" MaxLength="18" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_SECAO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_SECAO">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="NOME_EMPRESA" Type="varchar2" MaxLength="66" />
+          <Property Name="COD_FILIAL" Type="varchar2" MaxLength="20" />
+          <Property Name="NOME_FILIAL" Type="varchar2" MaxLength="66" />
+          <Property Name="COD_SECAO" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="NOME_SECAO" Type="varchar2" MaxLength="90" />
+          <Property Name="CPF_GESTOR" Type="varchar2" MaxLength="11" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_TIPO_FUNCIONARIO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_TIPO_FUNCIONARIO">
+          <Key>
+            <PropertyRef Name="COD_TIPO_FUNCIONARIO" />
+          </Key>
+          <Property Name="COD_TIPO_FUNCIONARIO" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="NOM_TIPO_FUNCIONARIO" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ORGANOGRAMA_USER.ORG_VALIDACAO_04' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ORG_VALIDACAO_04">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            
+            <PropertyRef Name="SECAO_GESTOR" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="EMPRESA" Type="varchar2" MaxLength="60" />
+          <Property Name="NOME" Type="varchar2" MaxLength="70" />
+          <Property Name="COD_SECAO" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="NOME_SECAO" Type="varchar2" MaxLength="90" />
+          <Property Name="CPF_GESTOR" Type="varchar2" MaxLength="11" />
+          <Property Name="SECAO_GESTOR" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="SCBP" Type="varchar2" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="gsOrganogramaModel" annotation:LazyLoadingEnabled="false">
+          <EntitySet Name="ORG_FUNCIONARIO_SUBSECAO" EntityType="Model.ORG_FUNCIONARIO_SUBSECAO" />
+          <EntitySet Name="ORG_HIERARQUIA" EntityType="Model.ORG_HIERARQUIA" />
+          <EntitySet Name="ORG_CARGO" EntityType="Model.ORG_CARGO" />
+          <EntitySet Name="ORG_FUNCIONARIO" EntityType="Model.ORG_FUNCIONARIO" />
+          <EntitySet Name="ORG_FUNCIONARIO_ALOCADO" EntityType="Model.ORG_FUNCIONARIO_ALOCADO" />
+          <EntitySet Name="ORG_LISTA_DIRETORIAS" EntityType="Model.ORG_LISTA_DIRETORIAS" />
+          <EntitySet Name="ORG_LISTA_SECOES" EntityType="Model.ORG_LISTA_SECOES" />
+          <EntitySet Name="ORG_LISTA_SECOES_SIMPLES" EntityType="Model.ORG_LISTA_SECOES_SIMPLES" />
+          <EntitySet Name="ORG_LISTA_SUBSECAO" EntityType="Model.ORG_LISTA_SUBSECAO" />
+          <EntitySet Name="ORG_SECAO" EntityType="Model.ORG_SECAO" />
+          <EntitySet Name="ORG_LOCAL_TRABALHO" EntityType="Model.ORG_LOCAL_TRABALHO" />
+          <EntitySet Name="ORG_EMPRESA" EntityType="Model.ORG_EMPRESA" />
+          <EntitySet Name="ORG_FUNCIONARIO_DISPONIVEL" EntityType="Model.ORG_FUNCIONARIO_DISPONIVEL" />
+          <EntitySet Name="ORG_FUNCIONARIO_EXPORT_GD_MDL" EntityType="Model.ORG_FUNCIONARIO_EXPORT_GD_MDL" />
+          <EntitySet Name="ORG_FUNCIONARIO_EXPORT_TR_MDL" EntityType="Model.ORG_FUNCIONARIO_EXPORT_TR_MDL" />
+          <EntitySet Name="ORG_FUNCIONARIO_EXPORT_GD" EntityType="Model.ORG_FUNCIONARIO_EXPORT_GD" />
+          <EntitySet Name="ORG_FUNCIONARIO_DISPONIVEL_SUB" EntityType="Model.ORG_FUNCIONARIO_DISPONIVEL_SUB" />
+          <EntitySet Name="ORG_FUNCIONARIO_EXPORT_TR" EntityType="Model.ORG_FUNCIONARIO_EXPORT_TR" />
+          <EntitySet Name="ORG_TIPO_FUNCIONARIO" EntityType="Model.ORG_TIPO_FUNCIONARIO" />
+          <EntitySet Name="ORG_LISTA_SECOES_CONSOLIDADO" EntityType="Model.ORG_LISTA_SECOES_CONSOLIDADO" />
+          <EntitySet Name="ORG_VALIDACAO_04" EntityType="Model.ORG_VALIDACAO_04" />
+          <EntitySet Name="ORG_AUDIT_TRAIL" EntityType="Model.ORG_AUDIT_TRAIL" />
+        </EntityContainer>
+        <EntityType Name="ORG_FUNCIONARIO_SUBSECAO">
+          <Key>
+            <PropertyRef Name="CPF" />
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="CPF" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="COD_EMPRESA" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="COD_SECAO" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ORG_HIERARQUIA">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="COD_SECAO" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="COD_EMPRESA_SUP" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="COD_SECAO_SUP" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="POSSUI_SUPERIOR" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="NOME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_MOD" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="GESTOR" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="GESTOR_MOD" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SUBSECAO" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="DIRETORIA" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="PUBLICO" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="ORG_CARGO">
+          <Key>
+            <PropertyRef Name="COD_CARGO" />
+          </Key>
+          <Property Name="COD_CARGO" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="DSC_CARGO" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="DSC_TIPO_FUNC" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_FUNCIONARIO">
+          <Key>
+            <PropertyRef Name="CPF" />
+          </Key>
+          <Property Name="CPF" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="NOME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="CHAPA" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="COD_EMPRESA" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_EMPRESA" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="COD_FILIAL" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_FILIAL" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="COD_SECAO" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_SECAO" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="DATA_ADMISSAO" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="COD_CARGO" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_CARGO" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="COD_TIPO_FUNC" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="DESC_TIPO_FUNC" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="LOGIN" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="SEXO" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="DATA_NASCIMENTO" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="PERFIL_PROFISSIONAL" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_FUNCIONARIO_ALOCADO">
+          <Key>
+            <PropertyRef Name="CPF" />
+          </Key>
+          <Property Name="NOME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="CPF" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="COD_EMPRESA" Type="String" MaxLength="2" Unicode="false" FixedLength="false" Nullable="false" />
+          <Property Name="COD_SECAO" Type="String" MaxLength="16" Unicode="false" FixedLength="false" Nullable="false" />
+          <Property Name="COD_SECAO_SUP" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="COD_EMPRESA_SUP" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="NOME_EMPRESA" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_SECAO" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_SECAO_SUP" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GESTOR" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TIPO_SECAO" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMAIL" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GESTOR_EMAIL" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_LISTA_DIRETORIAS">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="COD_SECAO" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_SECAO" Type="String" MaxLength="90" Unicode="false" FixedLength="false" />
+          <Property Name="TT" Type="String" MaxLength="105" Unicode="false" FixedLength="false" />
+          <Property Name="DIRETORIA" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ORG_LISTA_SECOES">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="COD_SECAO" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_FILIAL" Type="String" MaxLength="66" Unicode="false" FixedLength="false" />
+          <Property Name="COD_FILIAL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_RM" Type="String" MaxLength="90" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_MOD" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_MODIFICADO" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_SECAO_FINAL" Type="String" MaxLength="90" Unicode="false" FixedLength="false" />
+          <Property Name="COD_SECAO_SUP" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="COD_EMPRESA_SUP" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_SECAO_SUP" Type="String" MaxLength="90" Unicode="false" FixedLength="false" />
+          <Property Name="CPF_GESTOR_RM" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_GESTOR_RM" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="GESTOR_MOD" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="CPF_GESTOR_MOD" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_GESTOR_MOD" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="DIRETORIA" Type="String" MaxLength="90" Unicode="false" FixedLength="false" />
+          <Property Name="DIRETORIA_COD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PUBLICO" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="POSSUI_SUPERIOR" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Type="String" Name="EMAIL_GESTOR_RM" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMAIL_GESTOR_MOD" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="POSSUI_FILHAS" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_LISTA_SECOES_SIMPLES">
+          <Key>
+            <PropertyRef Name="COD_SECAO" />
+            <PropertyRef Name="COD_EMPRESA" />
+          </Key>
+          <Property Name="COD_SECAO" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="COD_EMPRESA" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NOME_SECAO" Type="String" MaxLength="90" Unicode="false" FixedLength="false" />
+          <Property Name="COD_EMPRESA_SUP" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="COD_SECAO_SUP" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="SECAO_SUP" Type="String" MaxLength="90" Unicode="false" FixedLength="false" />
+          <Property Name="DIRETORIA" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="PUBLICO" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CPF_GESTOR" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GESTOR" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="POSSUI_SUP" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="EMAIL_GESTOR" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_LISTA_SUBSECAO">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="COD_SECAO" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="NOME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="COD_SECAO_SUP" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_SECAO_SUP" Type="String" MaxLength="90" Unicode="false" FixedLength="false" />
+          <Property Name="GESTOR" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="DIRETORIA" Type="String" MaxLength="90" Unicode="false" FixedLength="false" />
+          <Property Name="DIRETORIA_COD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ORG_SECAO">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Name="COD_EMPRESA" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_EMPRESA" Type="String" MaxLength="66" Unicode="false" FixedLength="false" />
+          <Property Name="COD_FILIAL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_FILIAL" Type="String" MaxLength="66" Unicode="false" FixedLength="false" />
+          <Property Name="COD_SECAO" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NOME_SECAO" Type="String" MaxLength="90" Unicode="false" FixedLength="false" />
+          <Property Name="CPF_GESTOR" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ORG_LOCAL_TRABALHO">
+          <Key>
+            <PropertyRef Name="COD_LOCAL_TRABALHO" />
+          </Key>
+          <Property Type="Decimal" Name="COD_LOCAL_TRABALHO" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="NOM_LOCAL_TRABALHO" MaxLength="18" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_EMPRESA">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+          </Key>
+          <Property Type="String" Name="COD_EMPRESA" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESCRICAO" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_FUNCIONARIO_DISPONIVEL">
+          <Key>
+            <PropertyRef Name="COD_SECAO" />
+            <PropertyRef Name="NOME" />
+            <PropertyRef Name="CPF" />
+          </Key>
+          <Property Type="String" Name="COD_SECAO" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="String" Name="CPF" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORG_FUNCIONARIO_EXPORT_GD_MDL">
+          <Key>
+            <PropertyRef Name="ID_LINHA" />
+          </Key>
+          <Property Type="String" Name="COD_FUNCIONARIO" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NUM_MATRICULA" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_EMPRESA" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_ORGAO" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_CARGO" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_SUPERVISOR" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DSC_DOMINIO" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DSC_LOGON" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DSC_SENHA" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOM_FUNCIONARIO" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SEXO" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DAT_ADMISSAO" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DSC_EMAIL" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_TIPO_FUNC" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_TIPO_USUARIO" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DAT_NASCIMENTO" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_FILIAL" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_CPF" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DSC_APELIDO" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DAT_INICIO_FERIAS" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DAT_FIM_FERIAS" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_SUPERVISOR_FUNCIONAL" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DSC_GRADE_SALARIAL" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DAT_INICIO_CARGO" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_IDIOMA_PREF" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_PAIS" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_UF" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_SECAO" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_SECAO_SUP" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_SECAO_SUP" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_DIRETORIA" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_DIRETORIA" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ID_LINHA" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="CARGO_COD_CARGO" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CARGO_DSC_CARGO" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMPRESA_COD_EMPRESA" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMPRESA_NOM_EMPRESA" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LOC_TRAB_COD_LOCAL" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LOC_TRAB_NOM_LOCAL_TRABALHO" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TIPO_FUNC_COD_TIPO_FUNCIONARIO" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TIPO_FUNC_NOM_TIPO_FUNCIONARIO" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ORGAOS_COD_ORGAO" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ORGAOS_COD_ORGAO_SUPERIOR" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ORGAOS_COD_DIRETORIA" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ORGAOS_NOM_ORGAO" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_FUNCIONARIO_EXPORT_TR_MDL">
+          <Key>
+            <PropertyRef Name="ID_LINHA" />
+          </Key>
+          <Property Type="String" Name="FIRST_NAME" MaxLength="280" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LAST_NAME" MaxLength="280" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMAIL" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="USERNAME" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PASSWORD" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PERSONSTATUS" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="USERSTATUS" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CPF" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_EMPRESA" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_EMPRESA" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_FILIAL" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_FILIAL" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DAT_ADMISSAO" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_SECAO" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_SECAO" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CHAPA" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_CARGO" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_FUNCAO" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CPF_GESTOR" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_GESTOR" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMAIL_GESTOR" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SEXO" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DATA_NASCIMENTO" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_TIPO_FUNC" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESC_TIPO_FUNC" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_SECAO_SUP" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_SECAO_SUP" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_DIRETORIA" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_DIRETORIA" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ID_LINHA" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="PERFIL_PROFISSIONAL" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_FUNCIONARIO_EXPORT_GD">
+          <Key>
+            <PropertyRef Name="COD_FUNCIONARIO" />
+          </Key>
+          <Property Type="String" Name="COD_FUNCIONARIO" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NUM_MATRICULA" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_EMPRESA" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_ORGAO" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_CARGO" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_SUPERVISOR" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DSC_LOGON" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOM_FUNCIONARIO" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SEXO" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DAT_ADMISSAO" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DSC_EMAIL" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_TIPO_FUNC" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DAT_NASCIMENTO" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_FILIAL" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_SECAO" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_SECAO_SUP" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_SECAO_SUP" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_DIRETORIA" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_DIRETORIA" MaxLength="90" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_FUNCIONARIO_DISPONIVEL_SUB">
+          <Key>
+            <PropertyRef Name="COD_SECAO" />
+            <PropertyRef Name="CPF" />
+            <PropertyRef Name="NOME" />
+          </Key>
+          <Property Type="String" Name="COD_SECAO" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="String" Name="CPF" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORG_FUNCIONARIO_EXPORT_TR">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+            <PropertyRef Name="PASSWORD" />
+            <PropertyRef Name="CPF" />
+            <PropertyRef Name="COD_CARGO" />
+          </Key>
+          <Property Type="String" Name="FIRST_NAME" MaxLength="280" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LAST_NAME" MaxLength="280" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMAIL" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="USERNAME" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PASSWORD" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PERSONSTATUS" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="USERSTATUS" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CPF" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_EMPRESA" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_EMPRESA" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_FILIAL" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_FILIAL" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DAT_ADMISSAO" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_SECAO" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_SECAO" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CHAPA" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_CARGO" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_FUNCAO" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CPF_GESTOR" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_GESTOR" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMAIL_GESTOR" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SEXO" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DATA_NASCIMENTO" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_TIPO_FUNC" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESC_TIPO_FUNC" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_SECAO_SUP" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_SECAO_SUP" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_DIRETORIA" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_DIRETORIA" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PERFIL_PROFISSIONAL" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_TIPO_FUNCIONARIO">
+          <Key>
+            <PropertyRef Name="COD_TIPO_FUNCIONARIO" />
+          </Key>
+          <Property Type="String" Name="COD_TIPO_FUNCIONARIO" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOM_TIPO_FUNCIONARIO" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_LISTA_SECOES_CONSOLIDADO">
+          <Key>
+            <PropertyRef Name="COD_EMPRESA" />
+            <PropertyRef Name="COD_SECAO" />
+          </Key>
+          <Property Type="String" Name="COD_EMPRESA" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_SECAO" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_FILIAL" MaxLength="66" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_FILIAL" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_SECAO" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_SECAO_SUP" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_EMPRESA_SUP" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_SECAO_SUP" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CPF_GESTOR" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_GESTOR" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_DIRETORIA" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME_DIRETORIA" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TIPO" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="POSSUI_SUPERIOR" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PUBLICO" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_VALIDACAO_04">
+          <Key>
+            <PropertyRef Name="SECAO_GESTOR" />
+            <PropertyRef Name="COD_EMPRESA" />
+          </Key>
+          <Property Type="String" Name="COD_SECAO" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="String" Name="NOME_SECAO" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CPF_GESTOR" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SECAO_GESTOR" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SCBP" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COD_EMPRESA" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMPRESA" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOME" MaxLength="70" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORG_AUDIT_TRAIL">
+          <Key>
+            <PropertyRef Name="ID_AUDIT" />
+          </Key>
+          <Property Type="Decimal" Name="ID_AUDIT" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="USUARIO" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DATA_HORA" />
+          <Property Type="String" Name="OPERACAO" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VL_ANTERIOR" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VL_ATUAL" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IP" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="gsOrganogramaModel">
+          <EntitySetMapping Name="ORG_FUNCIONARIO_SUBSECAO"><EntityTypeMapping TypeName="Model.ORG_FUNCIONARIO_SUBSECAO"><MappingFragment StoreEntitySet="ORG_FUNCIONARIO_SUBSECAO">
+            <ScalarProperty Name="CPF" ColumnName="CPF" />
+            <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+            <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ORG_HIERARQUIA"><EntityTypeMapping TypeName="Model.ORG_HIERARQUIA"><MappingFragment StoreEntitySet="ORG_HIERARQUIA">
+            <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+            <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+            <ScalarProperty Name="COD_EMPRESA_SUP" ColumnName="COD_EMPRESA_SUP" />
+            <ScalarProperty Name="COD_SECAO_SUP" ColumnName="COD_SECAO_SUP" />
+            <ScalarProperty Name="POSSUI_SUPERIOR" ColumnName="POSSUI_SUPERIOR" />
+            <ScalarProperty Name="NOME" ColumnName="NOME" />
+            <ScalarProperty Name="NOME_MOD" ColumnName="NOME_MOD" />
+            <ScalarProperty Name="GESTOR" ColumnName="GESTOR" />
+            <ScalarProperty Name="GESTOR_MOD" ColumnName="GESTOR_MOD" />
+            <ScalarProperty Name="SUBSECAO" ColumnName="SUBSECAO" />
+            <ScalarProperty Name="DIRETORIA" ColumnName="DIRETORIA" />
+            <ScalarProperty Name="PUBLICO" ColumnName="PUBLICO" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ORG_CARGO"><EntityTypeMapping TypeName="Model.ORG_CARGO"><MappingFragment StoreEntitySet="ORG_CARGO">
+            <ScalarProperty Name="DSC_TIPO_FUNC" ColumnName="DSC_TIPO_FUNC" />
+                <ScalarProperty Name="COD_CARGO" ColumnName="COD_CARGO" />
+            <ScalarProperty Name="DSC_CARGO" ColumnName="DSC_CARGO" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ORG_FUNCIONARIO"><EntityTypeMapping TypeName="Model.ORG_FUNCIONARIO"><MappingFragment StoreEntitySet="ORG_FUNCIONARIO">
+            <ScalarProperty Name="PERFIL_PROFISSIONAL" ColumnName="PERFIL_PROFISSIONAL" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+            <ScalarProperty Name="NOME" ColumnName="NOME" />
+            <ScalarProperty Name="CHAPA" ColumnName="CHAPA" />
+            <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+            <ScalarProperty Name="NOME_EMPRESA" ColumnName="NOME_EMPRESA" />
+            <ScalarProperty Name="COD_FILIAL" ColumnName="COD_FILIAL" />
+            <ScalarProperty Name="NOME_FILIAL" ColumnName="NOME_FILIAL" />
+            <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+            <ScalarProperty Name="NOME_SECAO" ColumnName="NOME_SECAO" />
+            <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+            <ScalarProperty Name="DATA_ADMISSAO" ColumnName="DATA_ADMISSAO" />
+            <ScalarProperty Name="COD_CARGO" ColumnName="COD_CARGO" />
+            <ScalarProperty Name="NOME_CARGO" ColumnName="NOME_CARGO" />
+            <ScalarProperty Name="COD_TIPO_FUNC" ColumnName="COD_TIPO_FUNC" />
+            <ScalarProperty Name="DESC_TIPO_FUNC" ColumnName="DESC_TIPO_FUNC" />
+            <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+            <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+            <ScalarProperty Name="DATA_NASCIMENTO" ColumnName="DATA_NASCIMENTO" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ORG_FUNCIONARIO_ALOCADO"><EntityTypeMapping TypeName="Model.ORG_FUNCIONARIO_ALOCADO"><MappingFragment StoreEntitySet="ORG_FUNCIONARIO_ALOCADO">
+            <ScalarProperty Name="GESTOR_EMAIL" ColumnName="GESTOR_EMAIL" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="TIPO_SECAO" ColumnName="TIPO_SECAO" />
+                <ScalarProperty Name="GESTOR" ColumnName="GESTOR" />
+                <ScalarProperty Name="NOME_SECAO_SUP" ColumnName="NOME_SECAO_SUP" />
+                <ScalarProperty Name="NOME_SECAO" ColumnName="NOME_SECAO" />
+                <ScalarProperty Name="NOME_EMPRESA" ColumnName="NOME_EMPRESA" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+            <ScalarProperty Name="CPF" ColumnName="CPF" />
+            <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+            <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+            <ScalarProperty Name="COD_SECAO_SUP" ColumnName="COD_SECAO_SUP" />
+            <ScalarProperty Name="COD_EMPRESA_SUP" ColumnName="COD_EMPRESA_SUP" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ORG_LISTA_DIRETORIAS"><EntityTypeMapping TypeName="Model.ORG_LISTA_DIRETORIAS"><MappingFragment StoreEntitySet="ORG_LISTA_DIRETORIAS">
+            <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+            <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+            <ScalarProperty Name="NOME_SECAO" ColumnName="NOME_SECAO" />
+            <ScalarProperty Name="TT" ColumnName="TT" />
+            <ScalarProperty Name="DIRETORIA" ColumnName="DIRETORIA" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ORG_LISTA_SECOES"><EntityTypeMapping TypeName="Model.ORG_LISTA_SECOES"><MappingFragment StoreEntitySet="ORG_LISTA_SECOES">
+            <ScalarProperty Name="POSSUI_FILHAS" ColumnName="POSSUI_FILHAS" />
+                <ScalarProperty Name="EMAIL_GESTOR_MOD" ColumnName="EMAIL_GESTOR_MOD" />
+                <ScalarProperty Name="EMAIL_GESTOR_RM" ColumnName="EMAIL_GESTOR_RM" />
+                <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+            <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+            <ScalarProperty Name="NOME_FILIAL" ColumnName="NOME_FILIAL" />
+            <ScalarProperty Name="COD_FILIAL" ColumnName="COD_FILIAL" />
+            <ScalarProperty Name="NOME_RM" ColumnName="NOME_RM" />
+            <ScalarProperty Name="NOME_MOD" ColumnName="NOME_MOD" />
+            <ScalarProperty Name="NOME_MODIFICADO" ColumnName="NOME_MODIFICADO" />
+            <ScalarProperty Name="NOME_SECAO_FINAL" ColumnName="NOME_SECAO_FINAL" />
+            <ScalarProperty Name="COD_SECAO_SUP" ColumnName="COD_SECAO_SUP" />
+            <ScalarProperty Name="COD_EMPRESA_SUP" ColumnName="COD_EMPRESA_SUP" />
+            <ScalarProperty Name="NOME_SECAO_SUP" ColumnName="NOME_SECAO_SUP" />
+            <ScalarProperty Name="CPF_GESTOR_RM" ColumnName="CPF_GESTOR_RM" />
+            <ScalarProperty Name="NOME_GESTOR_RM" ColumnName="NOME_GESTOR_RM" />
+            <ScalarProperty Name="GESTOR_MOD" ColumnName="GESTOR_MOD" />
+            <ScalarProperty Name="CPF_GESTOR_MOD" ColumnName="CPF_GESTOR_MOD" />
+            <ScalarProperty Name="NOME_GESTOR_MOD" ColumnName="NOME_GESTOR_MOD" />
+            <ScalarProperty Name="DIRETORIA" ColumnName="DIRETORIA" />
+            <ScalarProperty Name="DIRETORIA_COD" ColumnName="DIRETORIA_COD" />
+            <ScalarProperty Name="PUBLICO" ColumnName="PUBLICO" />
+            <ScalarProperty Name="POSSUI_SUPERIOR" ColumnName="POSSUI_SUPERIOR" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ORG_LISTA_SECOES_SIMPLES"><EntityTypeMapping TypeName="Model.ORG_LISTA_SECOES_SIMPLES"><MappingFragment StoreEntitySet="ORG_LISTA_SECOES_SIMPLES">
+            <ScalarProperty Name="EMAIL_GESTOR" ColumnName="EMAIL_GESTOR" />
+                <ScalarProperty Name="POSSUI_SUP" ColumnName="POSSUI_SUP" />
+                <ScalarProperty Name="GESTOR" ColumnName="GESTOR" />
+                <ScalarProperty Name="CPF_GESTOR" ColumnName="CPF_GESTOR" />
+                <ScalarProperty Name="PUBLICO" ColumnName="PUBLICO" />
+                <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+            <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+            <ScalarProperty Name="NOME_SECAO" ColumnName="NOME_SECAO" />
+            <ScalarProperty Name="COD_EMPRESA_SUP" ColumnName="COD_EMPRESA_SUP" />
+            <ScalarProperty Name="COD_SECAO_SUP" ColumnName="COD_SECAO_SUP" />
+            <ScalarProperty Name="SECAO_SUP" ColumnName="SECAO_SUP" />
+            <ScalarProperty Name="DIRETORIA" ColumnName="DIRETORIA" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ORG_LISTA_SUBSECAO"><EntityTypeMapping TypeName="Model.ORG_LISTA_SUBSECAO"><MappingFragment StoreEntitySet="ORG_LISTA_SUBSECAO">
+            <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+            <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+            <ScalarProperty Name="NOME" ColumnName="NOME" />
+            <ScalarProperty Name="COD_SECAO_SUP" ColumnName="COD_SECAO_SUP" />
+            <ScalarProperty Name="NOME_SECAO_SUP" ColumnName="NOME_SECAO_SUP" />
+            <ScalarProperty Name="GESTOR" ColumnName="GESTOR" />
+            <ScalarProperty Name="DIRETORIA" ColumnName="DIRETORIA" />
+            <ScalarProperty Name="DIRETORIA_COD" ColumnName="DIRETORIA_COD" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ORG_SECAO"><EntityTypeMapping TypeName="Model.ORG_SECAO"><MappingFragment StoreEntitySet="ORG_SECAO">
+            <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+            <ScalarProperty Name="NOME_EMPRESA" ColumnName="NOME_EMPRESA" />
+            <ScalarProperty Name="COD_FILIAL" ColumnName="COD_FILIAL" />
+            <ScalarProperty Name="NOME_FILIAL" ColumnName="NOME_FILIAL" />
+            <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+            <ScalarProperty Name="NOME_SECAO" ColumnName="NOME_SECAO" />
+            <ScalarProperty Name="CPF_GESTOR" ColumnName="CPF_GESTOR" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ORG_LOCAL_TRABALHO">
+            <EntityTypeMapping TypeName="Model.ORG_LOCAL_TRABALHO">
+              <MappingFragment StoreEntitySet="ORG_LOCAL_TRABALHO">
+                <ScalarProperty Name="NOM_LOCAL_TRABALHO" ColumnName="NOM_LOCAL_TRABALHO" />
+                <ScalarProperty Name="COD_LOCAL_TRABALHO" ColumnName="COD_LOCAL_TRABALHO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_EMPRESA">
+            <EntityTypeMapping TypeName="Model.ORG_EMPRESA">
+              <MappingFragment StoreEntitySet="ORG_EMPRESA">
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_FUNCIONARIO_DISPONIVEL">
+            <EntityTypeMapping TypeName="Model.ORG_FUNCIONARIO_DISPONIVEL">
+              <MappingFragment StoreEntitySet="ORG_FUNCIONARIO_DISPONIVEL">
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_FUNCIONARIO_EXPORT_GD_MDL">
+            <EntityTypeMapping TypeName="Model.ORG_FUNCIONARIO_EXPORT_GD_MDL">
+              <MappingFragment StoreEntitySet="ORG_FUNCIONARIO_EXPORT_GD_MDL">
+                <ScalarProperty Name="ORGAOS_NOM_ORGAO" ColumnName="ORGAOS_NOM_ORGAO" />
+                <ScalarProperty Name="ORGAOS_COD_DIRETORIA" ColumnName="ORGAOS_COD_DIRETORIA" />
+                <ScalarProperty Name="ORGAOS_COD_ORGAO_SUPERIOR" ColumnName="ORGAOS_COD_ORGAO_SUPERIOR" />
+                <ScalarProperty Name="ORGAOS_COD_ORGAO" ColumnName="ORGAOS_COD_ORGAO" />
+                <ScalarProperty Name="TIPO_FUNC_NOM_TIPO_FUNCIONARIO" ColumnName="TIPO_FUNC_NOM_TIPO_FUNCIONARIO" />
+                <ScalarProperty Name="TIPO_FUNC_COD_TIPO_FUNCIONARIO" ColumnName="TIPO_FUNC_COD_TIPO_FUNCIONARIO" />
+                <ScalarProperty Name="LOC_TRAB_NOM_LOCAL_TRABALHO" ColumnName="LOC_TRAB_NOM_LOCAL_TRABALHO" />
+                <ScalarProperty Name="LOC_TRAB_COD_LOCAL" ColumnName="LOC_TRAB_COD_LOCAL" />
+                <ScalarProperty Name="EMPRESA_NOM_EMPRESA" ColumnName="EMPRESA_NOM_EMPRESA" />
+                <ScalarProperty Name="EMPRESA_COD_EMPRESA" ColumnName="EMPRESA_COD_EMPRESA" />
+                <ScalarProperty Name="CARGO_DSC_CARGO" ColumnName="CARGO_DSC_CARGO" />
+                <ScalarProperty Name="CARGO_COD_CARGO" ColumnName="CARGO_COD_CARGO" />
+                <ScalarProperty Name="ID_LINHA" ColumnName="ID_LINHA" />
+                <ScalarProperty Name="NOME_DIRETORIA" ColumnName="NOME_DIRETORIA" />
+                <ScalarProperty Name="COD_DIRETORIA" ColumnName="COD_DIRETORIA" />
+                <ScalarProperty Name="COD_SECAO_SUP" ColumnName="COD_SECAO_SUP" />
+                <ScalarProperty Name="NOME_SECAO_SUP" ColumnName="NOME_SECAO_SUP" />
+                <ScalarProperty Name="NOME_SECAO" ColumnName="NOME_SECAO" />
+                <ScalarProperty Name="COD_UF" ColumnName="COD_UF" />
+                <ScalarProperty Name="COD_PAIS" ColumnName="COD_PAIS" />
+                <ScalarProperty Name="COD_IDIOMA_PREF" ColumnName="COD_IDIOMA_PREF" />
+                <ScalarProperty Name="DAT_INICIO_CARGO" ColumnName="DAT_INICIO_CARGO" />
+                <ScalarProperty Name="DSC_GRADE_SALARIAL" ColumnName="DSC_GRADE_SALARIAL" />
+                <ScalarProperty Name="COD_SUPERVISOR_FUNCIONAL" ColumnName="COD_SUPERVISOR_FUNCIONAL" />
+                <ScalarProperty Name="DAT_FIM_FERIAS" ColumnName="DAT_FIM_FERIAS" />
+                <ScalarProperty Name="DAT_INICIO_FERIAS" ColumnName="DAT_INICIO_FERIAS" />
+                <ScalarProperty Name="DSC_APELIDO" ColumnName="DSC_APELIDO" />
+                <ScalarProperty Name="COD_CPF" ColumnName="COD_CPF" />
+                <ScalarProperty Name="COD_FILIAL" ColumnName="COD_FILIAL" />
+                <ScalarProperty Name="DAT_NASCIMENTO" ColumnName="DAT_NASCIMENTO" />
+                <ScalarProperty Name="COD_TIPO_USUARIO" ColumnName="COD_TIPO_USUARIO" />
+                <ScalarProperty Name="COD_TIPO_FUNC" ColumnName="COD_TIPO_FUNC" />
+                <ScalarProperty Name="DSC_EMAIL" ColumnName="DSC_EMAIL" />
+                <ScalarProperty Name="DAT_ADMISSAO" ColumnName="DAT_ADMISSAO" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="NOM_FUNCIONARIO" ColumnName="NOM_FUNCIONARIO" />
+                <ScalarProperty Name="DSC_SENHA" ColumnName="DSC_SENHA" />
+                <ScalarProperty Name="DSC_LOGON" ColumnName="DSC_LOGON" />
+                <ScalarProperty Name="DSC_DOMINIO" ColumnName="DSC_DOMINIO" />
+                <ScalarProperty Name="COD_SUPERVISOR" ColumnName="COD_SUPERVISOR" />
+                <ScalarProperty Name="COD_CARGO" ColumnName="COD_CARGO" />
+                <ScalarProperty Name="COD_ORGAO" ColumnName="COD_ORGAO" />
+                <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+                <ScalarProperty Name="NUM_MATRICULA" ColumnName="NUM_MATRICULA" />
+                <ScalarProperty Name="COD_FUNCIONARIO" ColumnName="COD_FUNCIONARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_FUNCIONARIO_EXPORT_TR_MDL">
+            <EntityTypeMapping TypeName="Model.ORG_FUNCIONARIO_EXPORT_TR_MDL">
+              <MappingFragment StoreEntitySet="ORG_FUNCIONARIO_EXPORT_TR_MDL">
+                <ScalarProperty Name="PERFIL_PROFISSIONAL" ColumnName="PERFIL_PROFISSIONAL" />
+                <ScalarProperty Name="ID_LINHA" ColumnName="ID_LINHA" />
+                <ScalarProperty Name="NOME_DIRETORIA" ColumnName="NOME_DIRETORIA" />
+                <ScalarProperty Name="COD_DIRETORIA" ColumnName="COD_DIRETORIA" />
+                <ScalarProperty Name="NOME_SECAO_SUP" ColumnName="NOME_SECAO_SUP" />
+                <ScalarProperty Name="COD_SECAO_SUP" ColumnName="COD_SECAO_SUP" />
+                <ScalarProperty Name="DESC_TIPO_FUNC" ColumnName="DESC_TIPO_FUNC" />
+                <ScalarProperty Name="COD_TIPO_FUNC" ColumnName="COD_TIPO_FUNC" />
+                <ScalarProperty Name="DATA_NASCIMENTO" ColumnName="DATA_NASCIMENTO" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="EMAIL_GESTOR" ColumnName="EMAIL_GESTOR" />
+                <ScalarProperty Name="NOME_GESTOR" ColumnName="NOME_GESTOR" />
+                <ScalarProperty Name="CPF_GESTOR" ColumnName="CPF_GESTOR" />
+                <ScalarProperty Name="NOME_FUNCAO" ColumnName="NOME_FUNCAO" />
+                <ScalarProperty Name="COD_CARGO" ColumnName="COD_CARGO" />
+                <ScalarProperty Name="CHAPA" ColumnName="CHAPA" />
+                <ScalarProperty Name="NOME_SECAO" ColumnName="NOME_SECAO" />
+                <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+                <ScalarProperty Name="DAT_ADMISSAO" ColumnName="DAT_ADMISSAO" />
+                <ScalarProperty Name="NOME_FILIAL" ColumnName="NOME_FILIAL" />
+                <ScalarProperty Name="COD_FILIAL" ColumnName="COD_FILIAL" />
+                <ScalarProperty Name="NOME_EMPRESA" ColumnName="NOME_EMPRESA" />
+                <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="USERSTATUS" ColumnName="USERSTATUS" />
+                <ScalarProperty Name="PERSONSTATUS" ColumnName="PERSONSTATUS" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_FUNCIONARIO_EXPORT_GD">
+            <EntityTypeMapping TypeName="Model.ORG_FUNCIONARIO_EXPORT_GD">
+              <MappingFragment StoreEntitySet="ORG_FUNCIONARIO_EXPORT_GD">
+                <ScalarProperty Name="NOME_DIRETORIA" ColumnName="NOME_DIRETORIA" />
+                <ScalarProperty Name="COD_DIRETORIA" ColumnName="COD_DIRETORIA" />
+                <ScalarProperty Name="COD_SECAO_SUP" ColumnName="COD_SECAO_SUP" />
+                <ScalarProperty Name="NOME_SECAO_SUP" ColumnName="NOME_SECAO_SUP" />
+                <ScalarProperty Name="NOME_SECAO" ColumnName="NOME_SECAO" />
+                <ScalarProperty Name="COD_FILIAL" ColumnName="COD_FILIAL" />
+                <ScalarProperty Name="DAT_NASCIMENTO" ColumnName="DAT_NASCIMENTO" />
+                <ScalarProperty Name="COD_TIPO_FUNC" ColumnName="COD_TIPO_FUNC" />
+                <ScalarProperty Name="DSC_EMAIL" ColumnName="DSC_EMAIL" />
+                <ScalarProperty Name="DAT_ADMISSAO" ColumnName="DAT_ADMISSAO" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="NOM_FUNCIONARIO" ColumnName="NOM_FUNCIONARIO" />
+                <ScalarProperty Name="DSC_LOGON" ColumnName="DSC_LOGON" />
+                <ScalarProperty Name="COD_SUPERVISOR" ColumnName="COD_SUPERVISOR" />
+                <ScalarProperty Name="COD_CARGO" ColumnName="COD_CARGO" />
+                <ScalarProperty Name="COD_ORGAO" ColumnName="COD_ORGAO" />
+                <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+                <ScalarProperty Name="NUM_MATRICULA" ColumnName="NUM_MATRICULA" />
+                <ScalarProperty Name="COD_FUNCIONARIO" ColumnName="COD_FUNCIONARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_FUNCIONARIO_DISPONIVEL_SUB">
+            <EntityTypeMapping TypeName="Model.ORG_FUNCIONARIO_DISPONIVEL_SUB">
+              <MappingFragment StoreEntitySet="ORG_FUNCIONARIO_DISPONIVEL_SUB">
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_FUNCIONARIO_EXPORT_TR">
+            <EntityTypeMapping TypeName="Model.ORG_FUNCIONARIO_EXPORT_TR">
+              <MappingFragment StoreEntitySet="ORG_FUNCIONARIO_EXPORT_TR">
+                <ScalarProperty Name="PERFIL_PROFISSIONAL" ColumnName="PERFIL_PROFISSIONAL" />
+                <ScalarProperty Name="NOME_DIRETORIA" ColumnName="NOME_DIRETORIA" />
+                <ScalarProperty Name="COD_DIRETORIA" ColumnName="COD_DIRETORIA" />
+                <ScalarProperty Name="NOME_SECAO_SUP" ColumnName="NOME_SECAO_SUP" />
+                <ScalarProperty Name="COD_SECAO_SUP" ColumnName="COD_SECAO_SUP" />
+                <ScalarProperty Name="DESC_TIPO_FUNC" ColumnName="DESC_TIPO_FUNC" />
+                <ScalarProperty Name="COD_TIPO_FUNC" ColumnName="COD_TIPO_FUNC" />
+                <ScalarProperty Name="DATA_NASCIMENTO" ColumnName="DATA_NASCIMENTO" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="EMAIL_GESTOR" ColumnName="EMAIL_GESTOR" />
+                <ScalarProperty Name="NOME_GESTOR" ColumnName="NOME_GESTOR" />
+                <ScalarProperty Name="CPF_GESTOR" ColumnName="CPF_GESTOR" />
+                <ScalarProperty Name="NOME_FUNCAO" ColumnName="NOME_FUNCAO" />
+                <ScalarProperty Name="COD_CARGO" ColumnName="COD_CARGO" />
+                <ScalarProperty Name="CHAPA" ColumnName="CHAPA" />
+                <ScalarProperty Name="NOME_SECAO" ColumnName="NOME_SECAO" />
+                <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+                <ScalarProperty Name="DAT_ADMISSAO" ColumnName="DAT_ADMISSAO" />
+                <ScalarProperty Name="NOME_FILIAL" ColumnName="NOME_FILIAL" />
+                <ScalarProperty Name="COD_FILIAL" ColumnName="COD_FILIAL" />
+                <ScalarProperty Name="NOME_EMPRESA" ColumnName="NOME_EMPRESA" />
+                <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="USERSTATUS" ColumnName="USERSTATUS" />
+                <ScalarProperty Name="PERSONSTATUS" ColumnName="PERSONSTATUS" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_TIPO_FUNCIONARIO">
+            <EntityTypeMapping TypeName="Model.ORG_TIPO_FUNCIONARIO">
+              <MappingFragment StoreEntitySet="ORG_TIPO_FUNCIONARIO">
+                <ScalarProperty Name="NOM_TIPO_FUNCIONARIO" ColumnName="NOM_TIPO_FUNCIONARIO" />
+                <ScalarProperty Name="COD_TIPO_FUNCIONARIO" ColumnName="COD_TIPO_FUNCIONARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_LISTA_SECOES_CONSOLIDADO">
+            <EntityTypeMapping TypeName="Model.ORG_LISTA_SECOES_CONSOLIDADO">
+              <MappingFragment StoreEntitySet="ORG_LISTA_SECOES_CONSOLIDADO">
+                <ScalarProperty Name="PUBLICO" ColumnName="PUBLICO" />
+                <ScalarProperty Name="POSSUI_SUPERIOR" ColumnName="POSSUI_SUPERIOR" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="NOME_DIRETORIA" ColumnName="NOME_DIRETORIA" />
+                <ScalarProperty Name="COD_DIRETORIA" ColumnName="COD_DIRETORIA" />
+                <ScalarProperty Name="NOME_GESTOR" ColumnName="NOME_GESTOR" />
+                <ScalarProperty Name="CPF_GESTOR" ColumnName="CPF_GESTOR" />
+                <ScalarProperty Name="NOME_SECAO_SUP" ColumnName="NOME_SECAO_SUP" />
+                <ScalarProperty Name="COD_EMPRESA_SUP" ColumnName="COD_EMPRESA_SUP" />
+                <ScalarProperty Name="COD_SECAO_SUP" ColumnName="COD_SECAO_SUP" />
+                <ScalarProperty Name="NOME_SECAO" ColumnName="NOME_SECAO" />
+                <ScalarProperty Name="COD_FILIAL" ColumnName="COD_FILIAL" />
+                <ScalarProperty Name="NOME_FILIAL" ColumnName="NOME_FILIAL" />
+                <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+                <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_VALIDACAO_04">
+            <EntityTypeMapping TypeName="Model.ORG_VALIDACAO_04">
+              <MappingFragment StoreEntitySet="ORG_VALIDACAO_04">
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="EMPRESA" ColumnName="EMPRESA" />
+                <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+                <ScalarProperty Name="SCBP" ColumnName="SCBP" />
+                <ScalarProperty Name="SECAO_GESTOR" ColumnName="SECAO_GESTOR" />
+                <ScalarProperty Name="CPF_GESTOR" ColumnName="CPF_GESTOR" />
+                <ScalarProperty Name="NOME_SECAO" ColumnName="NOME_SECAO" />
+                <ScalarProperty Name="COD_SECAO" ColumnName="COD_SECAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORG_AUDIT_TRAIL">
+            <EntityTypeMapping TypeName="Model.ORG_AUDIT_TRAIL">
+              <MappingFragment StoreEntitySet="ORG_AUDIT_TRAIL">
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="VL_ATUAL" ColumnName="VL_ATUAL" />
+                <ScalarProperty Name="VL_ANTERIOR" ColumnName="VL_ANTERIOR" />
+                <ScalarProperty Name="OPERACAO" ColumnName="OPERACAO" />
+                <ScalarProperty Name="DATA_HORA" ColumnName="DATA_HORA" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="ID_AUDIT" ColumnName="ID_AUDIT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="gsatOrganogramaModel" ZoomLevel="38">
+        <EntityTypeShape EntityType="Model.ORG_FUNCIONARIO_SUBSECAO" Width="1.5" PointX="4.75" PointY="0.75" Height="1.4279589843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORG_HIERARQUIA" Width="1.5" PointX="4.75" PointY="3.75" Height="2.9070849609374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORG_CARGO" Width="1.5" PointX="6.75" PointY="0.75" Height="1.2636116536458317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORG_FUNCIONARIO" Width="1.5" PointX="6.75" PointY="3.75" Height="3.8931689453124996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORG_FUNCIONARIO_ALOCADO" Width="1.5" PointX="13.875" PointY="7.375" Height="2.9070849609374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORG_LISTA_DIRETORIAS" Width="1.5" PointX="8.75" PointY="2.25" Height="1.7566536458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORG_LISTA_SECOES" Width="1.5" PointX="2.625" PointY="10.75" Height="4.2218636067708317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORG_LISTA_SECOES_SIMPLES" Width="1.5" PointX="8.75" PointY="8.75" Height="2.0853483072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORG_LISTA_SUBSECAO" Width="1.5" PointX="10.75" PointY="0.75" Height="2.2496956380208388" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORG_SECAO" Width="1.5" PointX="0.75" PointY="10.75" Height="2.0853483072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORG_LOCAL_TRABALHO" Width="1.5" PointX="11.375" PointY="9.75" Height="1.2636116536458388" />
+        <EntityTypeShape EntityType="Model.ORG_EMPRESA" Width="1.5" PointX="11.375" PointY="3.75" Height="1.2636116536458388" />
+        <EntityTypeShape EntityType="Model.ORG_FUNCIONARIO_DISPONIVEL" Width="2.875" PointX="10.75" PointY="12.25" Height="1.4279589843750031" />
+        <EntityTypeShape EntityType="Model.ORG_FUNCIONARIO_EXPORT_GD_MDL" Width="1.5" PointX="2.75" PointY="0.5" Height="6.3583789062500031" />
+        <EntityTypeShape EntityType="Model.ORG_FUNCIONARIO_EXPORT_TR_MDL" Width="1.5" PointX="17.625" PointY="1" Height="6.0296842447916674" />
+        <EntityTypeShape EntityType="Model.ORG_FUNCIONARIO_EXPORT_GD" Width="1.5" PointX="3.375" PointY="16.625" Height="4.0575162760416674" />
+        <EntityTypeShape EntityType="Model.ORG_FUNCIONARIO_DISPONIVEL_SUB" Width="1.5" PointX="13.375" PointY="0.75" Height="1.4279589843750031" />
+        <EntityTypeShape EntityType="Model.ORG_FUNCIONARIO_EXPORT_TR" Width="1.5" PointX="1.375" PointY="16.625" Height="5.8653369140625031" />
+        <EntityTypeShape EntityType="Model.ORG_TIPO_FUNCIONARIO" Width="1.5" PointX="4.875" PointY="8" Height="1.2636116536458388" />
+        <EntityTypeShape EntityType="Model.ORG_LISTA_SECOES_CONSOLIDADO" Width="1.5" PointX="5.375" PointY="10.75" Height="3.4001269531250031" />
+        <EntityTypeShape EntityType="Model.ORG_VALIDACAO_04" Width="1.5" PointX="7.375" PointY="12.75" Height="1.7566536458333388" />
+        <EntityTypeShape EntityType="Model.ORG_AUDIT_TRAIL" Width="1.5" PointX="13.375" PointY="3.75" Height="2.0853483072916674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

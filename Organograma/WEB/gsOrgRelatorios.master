@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/gsOrgMaster.Master" AutoEventWireup="true" CodeBehind="gsOrgRelatorios.master.cs" Inherits="WEB.gsOrgRelatorios" %>
+<%@ Register assembly="DevExpress.Web.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxNavBar" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxMenu" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.ASPxEditors.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  
+  <div class="Subtitulo">
+  
+     <asp:ContentPlaceHolder ID="cpTitulo"  runat="server">
+     Relatórios
+                    </asp:ContentPlaceHolder>
+  
+  
+  </div>
+
+
+        <table  style="width:100%">
+            <tr>
+                <td style="width:160px; vertical-align:top;">
+                    <dx:ASPxMenu ID="ASPxMenu1" runat="server" Height="188px" 
+                        Orientation="Vertical">
+                        <Items>
+                            <dx:MenuItem NavigateUrl="wfmRelatorioSubsecao.aspx" Text="Relatório de Subseções">
+                            </dx:MenuItem> 
+                               
+                               <dx:MenuItem NavigateUrl="wfmRelatorioSecoes.aspx" Text="Relatório de Seções">
+                            </dx:MenuItem> 
+                               
+
+                               
+                               <dx:MenuItem NavigateUrl="wfmRelatorioDiretorias.aspx" Text="Relatório de Diretorias">
+                            </dx:MenuItem> 
+                               
+
+                               
+                               <dx:MenuItem NavigateUrl="wfmRelatorioSecoesSuperiores.aspx" Text="Relatório de Seções Superiores">
+                            </dx:MenuItem> 
+                               
+
+
+
+
+
+                                 <dx:MenuItem NavigateUrl="wfmRelatorioFuncionariosLotados.aspx" Text="Funcionários Lotados">
+                            </dx:MenuItem>
+
+
+                                 <dx:MenuItem NavigateUrl="wfmRelatorioOrganograma.aspx?tipo=Simples" Text="Organograma Simples">
+                            </dx:MenuItem>
+
+                                 <dx:MenuItem NavigateUrl="wfmRelatorioOrganograma.aspx?tipo=Completo" Text="Organograma Completo">
+                            </dx:MenuItem>
+
+
+
+
+
+
+
+
+                        </Items>
+                    </dx:ASPxMenu>
+                </td>
+                <td style="vertical-align:top">
+                    <asp:ContentPlaceHolder ID="cpRelatorios"  runat="server">
+                    </asp:ContentPlaceHolder>
+                    
+                    
+                    </td>
+            </tr>
+        </table>
+
+ 
+</asp:Content>
